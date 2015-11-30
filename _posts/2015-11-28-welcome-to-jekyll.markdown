@@ -3,6 +3,10 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-11-28 18:46:12
 categories: jekyll update
+preview: |
+   Some Text **bold**
+   Some more text $x^2$
+   And some more text
 ---
 Trial: $x^2+\infty$
 

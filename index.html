@@ -14,6 +14,7 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        <article class="preview-text">{{ post.preview | newline_to_br | markdownify }}</article>
       </li>
     {% endfor %}
   </ul>
