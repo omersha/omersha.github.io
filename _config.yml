@@ -1,6 +1,6 @@
 # Site settings
 title: Trivial or Wrong
-email: 2add@later.com
+email: omer@sphericalcow.io
 description: > # this means to ignore newlines until "baseurl:"
   Machine Learning, Data Science, Programming, Mathematics and Algorithms.
 baseurl: "" # the subpath of your site, e.g. /blog/
