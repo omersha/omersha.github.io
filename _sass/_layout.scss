@@ -22,6 +22,11 @@
     &:visited {
         color: $grey-color-light;
     }
+
+    &:hover {
+        color: $grey-color-light;
+        text-decoration: underline;
+    }
 }
 
 .site-nav {
