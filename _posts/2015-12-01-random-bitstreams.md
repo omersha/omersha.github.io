@@ -360,7 +360,7 @@ perturbator = AndOrPerturbator(0.67, 8*1024, 128)
 
  
 That's an improvement of ~6000%-7000% from the initial algorithm, but it's still
-slower than simply generate random bytes. Can we further approach the
+slower than simply generating random bytes. Can we further approach the
 performances of numpy.random.bytes, while still control the entropy?
 
 Yes we can. The key is switching from perturbation to generation. Instead of
