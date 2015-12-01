@@ -5,7 +5,7 @@ preview: A case study - controlling the entropy of pseudo-random bits in Python 
 ---
 
 I was asked to write a simple utility in Python, meant to be used for testing
-some compression features of a storage system. (the source code is available
+some compression features of a storage system (the source code is available
 [here](https://github.com/omersha/Redundancy-Generator)).
 
 It is essentially just a random bitstream generator, with some specific requirements.
@@ -191,7 +191,7 @@ $B(8,p)$. So iterating the following 2 steps, achieves the same distribution of
 bits:
 1. Draw N from $B(8,p)$.
 2. Draw a Byte with exactly $N$ '0's (uniformly from the $\binom{8}{N}$
-admissable bytes).
+admissible bytes).
 
 This can be done faster and cleaner in just 1 step, by pre-calculating the
 probability of drawing each byte, and draw directly from the corresponding
@@ -256,14 +256,14 @@ generator = RandomBitstreams(0.5)
 This is ~300%-400% faster, but not fast enough.
 
 A major improvement can be done by taking inspiration from cryptographic
-cyphers. The possibilities are numerous, and here are two such schemes. The
-first is directly analogous to block cyphers, and the second is more
+ciphers. The possibilities are numerous, and here are two such schemes. The
+first is directly analogous to block ciphers, and the second is more
 combinatorial in nature.
 
 Bitwise operations are central to both ideas. Recall: $\land$ is
 "$\mathrm{and}$", $\lor$ is "$\mathrm{or}$" and $\oplus$ is "$\mathrm{xor}$".
 
-As we have seen, it is possible to generate random bitsreams rather fast (e.g.
+As we have seen, it is possible to generate random bitstreams rather fast (e.g.
 using numpy.random.bytes). The first idea is to do just that, but then modify
 the stream's entropy by some bitwise operations relying on the following simple
 observation: Let $C$ be a random bitstream taken from $B(n,p)$, and denote
@@ -285,7 +285,7 @@ and "and"ing requires $p(M)\ge p(M')$, and that in our setting
 $p(M)=\frac{1}{2}$ - so both are equally valid).
 
 Of course, the simplistic method of holding one such key and applying it block-
-wise on $M_1,... ,M_m$ to get a new bistream of length $nm$ won't work well. The
+wise on $M_1,... ,M_m$ to get a new bitstream of length $nm$ won't work well. The
 resulting entropy would be right, but the bit-pattern of $K$ will induce
 dependencies over the bits of the new bitstream, that dictionary coders could
 exploit.
@@ -297,7 +297,7 @@ assume $p(M')\ge\frac{1}{2}$ (or otherwise $\mathrm{not}$ the result).
 
 As a final improvement, I suggest to use both $\land$ and $\lor$ at each step
 (e.g. first $\land$, then $\lor$). The additional overhead of performing 2
-bitwise operations instead of 1 per block is neglectable, and it allows us to
+bitwise operations instead of 1 per block is negligible, and it allows us to
 get the same pseudo randomality we previously achieves using $r$ keys, by using
 just $\sqrt{r}$ keys. Specifically, if $p(M')\ge\frac{1}{2}$ we may do this with
 any arbitrarily choice of $p(K_\mathrm{and})$ and
