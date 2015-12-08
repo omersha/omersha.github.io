@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Random Bitstreams"
-preview: A case study - controlling the entropy of pseudo-random bits in Python when performance matters.
+preview: Controlling the entropy of pseudo-random bits in Python when performance matters.
 ---
 
 I was asked to write a simple utility in Python, meant to be used for testing
@@ -281,7 +281,7 @@ We can obtain a new bitstream $M'$ with $p(M')>\frac{1}{2}$ by taking $M':=M\lor
 K$ where $p(M')=1-(1-p(M))(1-p(K))\Rightarrow p(K)=1-\frac{1-p(M')}{1-p(M)}$,
 and obtain a new bitstream $M'$ with $p(M')<\frac{1}{2}$ by taking $M':=M\land
 K$ with $p(K))=\frac{p(M')}{p(M)}$ (as expected, "or"ing requires $p(M)\le p(M')$
-and "and"ing requires $p(M)\ge p(M')$, and that in our setting
+and "and"ing requires $p(M)\ge p(M')$, and in our setting
 $p(M)=\frac{1}{2}$ - so both are equally valid).
 
 Of course, the simplistic method of holding one such key and applying it block-
@@ -375,7 +375,7 @@ C_2)=p(C_1)(1-p(C_2))+p(C_2)(1-p(C_1))$ (based on the slogan "xor rewards disagr
 Now all that is left is to generate 2 pools of "building blocks" for any given $p(M')$.
 The first pool may contain blocks whose entropy is maximal, and independent of $p(M')$
 (so they can be generated quickly, and possibly in advance - an optimization that is not
-in the code below), and the second pool contain blocks whose entropy is chosen so that
+in the code below), and the second pool contains blocks whose entropy is chosen so that
 $p(C_1\oplus C_2)=p(M')$ where $C_1$ is taken from the first pool, and $C_2$ from the second. 
 
 **In [14]:**
@@ -434,7 +434,7 @@ combiner = CombinatorialGenerator(0.74, 8*1024, 1024*1024)
  
 The larger the blocks size, the faster this generator works. The price is a
 reduces pseudo randomality for long bitstreams. But as long as the bitstream
-size (in bytes) is less then then "pool_size times block_bytes" this is not an
+size (in bytes) is less than "pool_size times block_bytes" this is not an
 issue for the purpose of testing compression, and it's easy (and quick) to
 reinitialize the generator once it's exhausted.
 
