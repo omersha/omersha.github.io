@@ -42,7 +42,7 @@ auto pool = std::array<DummyType, 3>(); // Error: no matching function for call 
 All kinds of runtime hacks (e.g. switching to an array of pointers and
 constructing its elements in a loop) are obviously evil. For example, they
 introduce an extra level of indirection that obstructs the optimizer, and they
-present an unattractive choice between heap allocations or using custom
+present an unattractive choice between heap allocations or custom
 allocators.
 
 Luckily, this problem has an easy and decent solution:
