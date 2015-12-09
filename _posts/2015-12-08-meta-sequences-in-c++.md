@@ -152,10 +152,10 @@ template<size_t length> using make_index_sequence = typename make_sequence_imp<l
 
 The third line is merely a syntactic sugar. The first line defines a template
 class that encodes a postfix of the final sequence (```S...```) and a parameter
-*N* that counts the missing elements. This class is defined recursively, so that
+```N``` that counts the missing elements. This class is defined recursively, so that
 shorter postfixs are derived from longer postfixs. The second line is a
 specialized version of this class for the base case, of a fully spanned sequence
-- and it defines the type "```type```" that encodes the entire sequence, and is
+- and it defines the type ```type``` that encodes the entire sequence, and is
 accessible (due to inheritance) from all the chain of derived classes.
 
 For example, unrolling $N=4$ get us:
@@ -170,7 +170,7 @@ struct make_sequence_imp<4> : make_sequence_imp<3, 3> {};
 
 So the type of ```make_sequence_imp<4>::type``` is ```index_sequence<0, 1, 2, 3>```.
 
-Now the problem with this is implementation might be clearer: generation of a
+Now the problem with this implementation might be clearer: generation of a
 sequence of $N$ elements requires an inheritance tree of depth $N$. Furthermore,
 sequences of different lengths can't share intermediate instantiations. This
 could easily make compile time unreasonably long even for moderate $N$s.
@@ -181,7 +181,7 @@ mirror/gcc/blob/master/libstdc%2B%2B-v3/include/std/utility)!
  
 ### Meta-Enumeration - Take 2
 
-A faster and a compiler-friendlier approach, is to use type-concatenation
+A faster and a compiler-friendlier approach, is to use concatenation
 (analogously to [exponentiation by
 squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)):
 
