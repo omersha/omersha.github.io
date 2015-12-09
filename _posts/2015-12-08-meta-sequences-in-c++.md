@@ -181,9 +181,7 @@ mirror/gcc/blob/master/libstdc%2B%2B-v3/include/std/utility)!
  
 ### Meta-Enumeration - Take 2
 
-A faster and a compiler-friendlier approach, is to use concatenation
-(analogously to [exponentiation by
-squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)):
+A faster and a compiler-friendlier approach, is to use concatenation:
 
 {% highlight cpp %}
 template<typename Seq1, typename Seq2> struct Concatenate;
