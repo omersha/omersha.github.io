@@ -51,7 +51,7 @@ case of Bernoulli trials with probability $p$ it's $H(p)=-p\log_2(p)-(1-p)\log_2
 
 So calculating the entropy associated with a given value of $p$ is simple. But
 the converse is not as simple. I don't know how to analytically solve this, but
-numerically it's easy: $H(p)$ is parabola-ish, so it can be reasonably
+numerically I do: $H(p)$ is parabola-ish, so it can be reasonably
 approximated by the quadratic function whose roots are 0 and 1, and its vertex's
 height is 1, i.e. $4p(1-p)$: 
 
@@ -189,6 +189,7 @@ bits. Consider, for example, drawing 1 byte at a time. Since each random byte is
 a sequence of 8 random bits, the number of '0's is binomially distributed
 $B(8,p)$. So iterating the following 2 steps, achieves the same distribution of
 bits:
+
 1. Draw N from $B(8,p)$.
 2. Draw a Byte with exactly $N$ '0's (uniformly from the $\binom{8}{N}$
 admissible bytes).
@@ -433,7 +434,7 @@ combiner = CombinatorialGenerator(0.74, 8*1024, 1024*1024)
 
  
 The larger the blocks size, the faster this generator works. The price is a
-reduces pseudo randomality for long bitstreams. But as long as the bitstream
+reduced pseudo randomality for long bitstreams. But as long as the bitstream
 size (in bytes) is less than "pool_size times block_bytes" this is not an
 issue for the purpose of testing compression, and it's easy (and quick) to
 reinitialize the generator once it's exhausted.
