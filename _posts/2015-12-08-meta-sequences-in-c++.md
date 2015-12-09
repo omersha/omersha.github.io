@@ -51,7 +51,7 @@ Luckily, this problem has an easy and decent solution:
 auto pool = MakeArray<3>([](size_t index){return DummyType(index);});
 {% endhighlight %}
 
-Where the function ```MakeArray``` will be defined shortly. This code is
+where the function ```MakeArray``` will be defined shortly. This code is
 evaluated, in compile time, to this:
 
 {% highlight cpp %}
