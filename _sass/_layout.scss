@@ -11,12 +11,15 @@
     position: relative;
 }
 
+.site-title-box {
+    margin-bottom: 0;
+    float: left;
+}
+
 .site-title {
     font-size: 26px;
     line-height: 56px;
     letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
 
     &,
     &:visited {
@@ -27,6 +30,12 @@
         color: $grey-color-light;
         text-decoration: underline;
     }
+}
+
+.site-subtitle {
+    line-height: 10px;
+    color: $subtitle-color;
+    font-size: 16px;
 }
 
 .site-nav {
@@ -242,5 +251,5 @@
 }
 
 .preview-text {
-   color: $preview-text;
+   color: $preview-color;
 }

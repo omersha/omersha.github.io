@@ -30,7 +30,8 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-$preview-text:     #a0a4be;
+$preview-color:     #a0a4be;
+$subtitle-color:    lighten($grey-color, 20%);
 
 
 // Using media queries with like this:
