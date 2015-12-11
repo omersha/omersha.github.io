@@ -16,9 +16,9 @@ templates](http://en.cppreference.com/w/cpp/language/parameter_pack), introduced
 in C++11, were a major improvement of the language. And with them came a new and
 extremely useful idiom: meta-sequences. Below I'll give a demonstration of a
 problem - initializing an array at compile-time - for which meta-sequences
-provide a great solution.
+provide a good solution.
 
-Since they are the key idea behind the most elegant solutions to many problems,
+Since they are the key idea behind many elegant solutions to various problems,
 it is not surprising that utilities for using them were included in the
 standard library (since [C++14](http://en.cppreference.com/w/cpp/utility)). It
 is surprising, though, that the implementation that comes with the STL is often
