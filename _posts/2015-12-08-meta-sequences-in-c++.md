@@ -21,7 +21,7 @@ provide a good solution.
 Since they are the key idea behind many elegant solutions to various problems,
 it is not surprising that utilities for using them were included in the
 standard library (since [C++14](http://en.cppreference.com/w/cpp/utility)). It
-is surprising, though, that the implementation that comes with the STL is often
+is surprising, though, that the implementation that comes with the STL is sometimes
 problematic and requires using homemade alternatives (this is the case, for
 example, in gcc 5.1.0). So I'll discuss implementation details as well. 
  
