@@ -499,9 +499,9 @@ The natural transformation corresponds to the counit $\sigma$ is:
 
 $$\require{AMScd}
 \begin{CD}
-(\mathrm{Lc}\circ\mathrm{Sp})(L) @>f\_{|\{\mathscr{F}\}}>>
+(\mathrm{Lc}\circ\mathrm{Sp})(L) @>f_{|\{\mathscr{F}\}}>>
 (\mathrm{Lc}\circ\mathrm{Sp})(M)\\
-@V\sigma_L:=(\phi_L)\_\*VV @VV\sigma_M:=(\phi_M)\_\*V\\
+@V\sigma_L:=(\phi_L)_*VV @VV\sigma_M:=(\phi_M)_*V\\
 L @>f>> M
 \end{CD}$$
 
