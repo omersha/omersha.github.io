@@ -252,6 +252,7 @@ The central objects of Stone duality are Heyting algebras. Those are the
 "intermediate objects" used to relate topologies and locales. Such structures
 come up naturally in 2 different contexts, and induce a nontrivial connection
 between them:
+
 1. As the structure of the Lindenbaum–Tarski algebra of some logical theories.
 2. As the structure of the open-sets of all topological spaces.
 
@@ -302,6 +303,7 @@ how come is it **complete**? And where are the implications?
 
 Time for a methodological detour. There are 3 different categories whose objects
 are complete Heyting algebras:
+
 1. $\mathrm{cHa}$: In which morphisms preserve both arbitrary joins and
 arbitrary meets.
 2. $\mathrm{Frm}$ (Frames): In which morphisms preserve arbitrary joins, but
