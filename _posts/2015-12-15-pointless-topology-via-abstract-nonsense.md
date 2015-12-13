@@ -7,7 +7,7 @@ preview: "Trigger Warning: pure mathematics. Stone Duality gives a rigorous mean
 In 1940. G.H. Hardy published his essay "A Mathematician's Apology" in which he
 used number theory as a prominent example for pure and inapplicable mathematics.
 He meant it seriously, not as a joke. To the defense of his apology (pun a bit
-intended), at the time only a handful of programmers though about hash-tables,
+intended), at the time only a handful of programmers thought about hash-tables,
 cryptosystems were yet to be widely implemented in E-commerce platforms and not
 many people used FFT before 1965 (no one but Gauss, I think). Indeed, computers
 forced mathematicians to work harder and harder in order to keep annoying
