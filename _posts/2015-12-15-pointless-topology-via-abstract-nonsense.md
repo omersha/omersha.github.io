@@ -579,6 +579,6 @@ idempotent).
 Stone showed that any Boolean algebra is spatial, and its spectrum is a
 topological space which is rather exotic: it is compact, totally disconnected
 and Hausdorff (such spaces are now called "Stone spaces"). The importance of
-this theorem resides in the fact that it leads to representation theorem for
+this theorem resides in the fact that it leads to a representation theorem for
 Boolean algebras: any abstract Boolean algebra is isomorphic to a concrete
 Boolean algebra (i.e. a field of sets). 
