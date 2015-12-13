@@ -225,7 +225,7 @@ called a **lattice**. When all arbitrary sets are bounded, the lattice is said
 to be **complete**. An easy fact with deep consequences, is that lattices are
 algebraic structures. So if we're given a poset with infimums and supremum, we
 may replace the partial-order with 2 binary operations, and lose no information
-($x=\land\{x,y\}\Leftrightarrow x\le y\Leftrightarrow y=\lor\{x,y\}$). The
+($x=\land\\{x,y\\}\Leftrightarrow x\le y\Leftrightarrow y=\lor\\{x,y\\}$). The
 deepness is due to the analogy between lattices and Cartesian-closed categories,
 and it has much to do with Stone duality.
 
@@ -315,7 +315,7 @@ This is certainly non-obvious, and implies: **(A)** As a structure, being either
 a Frame or a Locale is equivalent to being a cHa. **(B)** A morphism may
 preserve arbitrary joins, but not arbitrary meets (and vice versa). I won't
 prove it here, but just hint that given a frame, we can define implications by
-$a\rightarrow b := \lor\{c:c\land a\le b\}$, and that actually stronger
+$a\rightarrow b := \lor\\{c:c\land a\le b\\}$, and that actually stronger
 statements hold (e.g. a lattice is a frame if and only if it is cHa). Also, note
 that the categories $\mathrm{Frm}$ and $\mathrm{Loc}$ are dual.
 
@@ -358,7 +358,7 @@ respect (opposite) compositions w.r.t to this contravariant functor.
 
 Localification of a topological space is an abstraction, and it leads to
 information loss: many different topological spaces may induce the same locale
-(easy example: any set equipped with the trivial topology $\{X,\emptyset\}$
+(easy example: any set equipped with the trivial topology $\\{X,\emptyset\\}$
 induces the same locale. So it's impossible in general to restore the original
 points of the space from a locale).
 
@@ -377,15 +377,15 @@ in a categorical sense: locale-morphisms preserve points.
 
 #### Recipe 1: Points as Frame Morphisms
 Given a space $(X,\Omega X)$, there is a natural one-one correspondence between
-points $x_0\in X$ and functions $f_{x_0}:\{0\}\rightarrow X$ given by $0\mapsto
-x_0$. The set $\{0\}$ has a unique topology (the trivial one,
-$\{\{0\},\emptyset\}$), thus we have a canonical $\mathrm{Frm}$-morphism
-$f_{x_0}^{-1}:\Omega X\rightarrow\Omega\{0\}$.
+points $x_0\in X$ and functions $f_{x_0}:\\{0\\}\rightarrow X$ given by $0\mapsto
+x_0$. The set $\\{0\\}$ has a unique topology (the trivial one,
+$\\{\\{0\\},\emptyset\\}$), thus we have a canonical $\mathrm{Frm}$-morphism
+$f_{x_0}^{-1}:\Omega X\rightarrow\Omega\\{0\\}$.
 
 The construction is easily interpretable: Since the elements of $L$ are meant to
 model "locations", then a point can be naturally thought of in terms of all the
 locations containing it. So a point can be identified with a characteristic
-function $\mu:L\mapsto\{0,1\}$ that preserve arbitrary meets and finite joins
+function $\mu:L\mapsto\\{0,1\\}$ that preserve arbitrary meets and finite joins
 (finite, since an arbitrary join of non-neighborhoods may be a neighborhood),
 i.e., $\mu$ is a $\mathrm{Loc}$-morphism. It's dual is exactly the
 $\mathrm{Frm}$-morphism constructed above.
@@ -393,7 +393,7 @@ $\mathrm{Frm}$-morphism constructed above.
 To specify $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$, we need to
 functorially map $L$ to open sets defined over those points. The object part is
 constructed by associating each $\ell\in L$ with an open set
-$\phi(\ell):=\{\mu\in\mathrm{Sp}(L) | \mu(\ell)=1\}$ (it's not hard to show that
+$\phi(\ell):=\\{\mu\in\mathrm{Sp}(L) | \mu(\ell)=1\\}$ (it's not hard to show that
 this is indeed a topology - and it should be intuitively clear by the above
 interpretation regarding points).
 
@@ -404,8 +404,8 @@ $\mathrm{Sp}(L)$ and $\mathrm{Sp}(M)$ as $\mathrm{Frm}$-morphisms, $f\_\mu$ will
 map points by composing them with the $\mathrm{Frm}$-morphism
 $\mu^\mathrm{op}:M\rightarrow L$, so $f\_\mu(x):=x\circ\mu^\mathrm{op}$. This
 definition "compiles": any $x\in\mathrm{Sp}(L)$ is a $\mathrm{Frm}$-morphism
-$L\rightarrow\{0,1\}$, so $x\circ\mu^\mathrm{op}$ is a $\mathrm{Frm}$-morphism
-$M\rightarrow\{0,1\}$, which means
+$L\rightarrow\\{0,1\\}$, so $x\circ\mu^\mathrm{op}$ is a $\mathrm{Frm}$-morphism
+$M\rightarrow\\{0,1\\}$, which means
 $f\_\mu(x)=x\circ\mu^\mathrm{op}\in\mathrm{Sp}(M)$.
 
 
@@ -426,20 +426,20 @@ Thinking again of a "point" as a collection of locations, filters become an
 obvious candidates to model points. The restriction to completely-prime filters
 meant to mitigate the issue (mentioned above) regarding arbitrary-joins and can
 be understood as allowing only neighbourhood systems as admissible filters
-(indeed, in topological spaces any collection $\mathscr{U}\_x:=\{U\in\Omega X |
-x\in U\}$ is a completely-prime filter).
+(indeed, in topological spaces any collection $\mathscr{U}\_x:=\\{U\in\Omega X |
+x\in U\\}$ is a completely-prime filter).
 
 This construction is equivalent to the first one: Any completely-prime filter
 $\mathscr{F}\subset L$ can be associated with the locale-morphism
-$\mu:L\rightarrow\{0,1\}$ s.t. $\mu(x)=1\Leftrightarrow x\in F$, and any locale-
-morphism $\mu:L\rightarrow\{0,1\}$ induced the completely-prime filter
-$\mathscr{F}:=\{x\in L | \mu(x)=1\}$.
+$\mu:L\rightarrow\\{0,1\\}$ s.t. $\mu(x)=1\Leftrightarrow x\in F$, and any locale-
+morphism $\mu:L\rightarrow\\{0,1\\}$ induced the completely-prime filter
+$\mathscr{F}:=\\{x\in L | \mu(x)=1\\}$.
 
 The object part of $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ is
 constructed by associating each $\ell\in L$ with an open set
-$\Sigma\_\ell:=\{\mathscr{F}\subset L | \ell\in\mathscr{F}\}$ where $\mathscr{F}$
+$\Sigma\_\ell:=\\{\mathscr{F}\subset L | \ell\in\mathscr{F}\\}$ where $\mathscr{F}$
 is completely prime. This is a topology, since $\Sigma_0=\emptyset$,
-$\Sigma_1=\{\mathscr{F} | \mathscr{F}\subset L\}$ (completely prime filters),
+$\Sigma_1=\\{\mathscr{F} | \mathscr{F}\subset L\\}$ (completely prime filters),
 $\Sigma\_{a\land b}=\Sigma_a\cap\Sigma_b$ and
 $\Sigma\_{\bigvee{a_i}}=\bigcup\Sigma\_{a_i}$.
 
@@ -451,7 +451,7 @@ adjoint of $\psi$ (and since $\psi^\*$ is a $\mathrm{Frm}$-morphism and
 $\mathscr{F}$ is completely prime over $L$, then $(\psi^\*)^{-1}(\mathscr{F})$ is
 completely prime over $M$ - so $\mathrm{Sp}(\psi)$ maps points to points). The
 map $\mathrm{Sp}(\psi)$ is continuous, since
-$(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\Sigma\_{\psi^\*(a)}$, thus $(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\{\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^\*)^{-1}(\mathscr{F})\in\Sigma\_a\}=\{\mathscr{F}|a\in(\psi^\*)^{-1}(\mathscr{F})\}=\{\mathscr{F}|\psi^\*(a)\in\mathscr{F}\}=\Sigma\_{\psi^\*(a)}$.
+$(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\Sigma\_{\psi^\*(a)}$, thus $(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\\{\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^\*)^{-1}(\mathscr{F})\in\Sigma\_a\\}=\\{\mathscr{F}|a\in(\psi^\*)^{-1}(\mathscr{F})\\}=\\{\mathscr{F}|\psi^\*(a)\in\mathscr{F}\\}=\Sigma\_{\psi^\*(a)}$.
 
 
 #### Recipe 3: Points as Principal Prime Ideals
@@ -465,17 +465,17 @@ filters (heuristically, a principal prime ideal is a minimal collection of
 The forth construction essentially follows from the third: an element $\ell\in
 L$ is meet-irreducible whenever the principle ideal $\downarrow\ell$ is also
 prime. Alternatively, it follows from the second construction: if $\mathscr{F}$
-is a completely-prime filter, then $\ell\_\mathscr{F}:=\bigvee\{x\in L | x
-\not\in \mathscr{F}\}$ is meet-irreducible, and if $\ell\in L$ is meet-
-irreducible, then $\mathscr{F}\_\ell:=\{x\in L | x\not\le\ell\}$ is a completely-
+is a completely-prime filter, then $\ell\_\mathscr{F}:=\bigvee\\{x\in L | x
+\not\in \mathscr{F}\\}$ is meet-irreducible, and if $\ell\in L$ is meet-
+irreducible, then $\mathscr{F}\_\ell:=\\{x\in L | x\not\le\ell\\}$ is a completely-
 prime filter. Moreover, $\ell\_{\mathscr{F}\_\ell}=\ell$ and
 $x\in\mathscr{F}\_{\ell\_\mathscr{F}}\Leftrightarrow x\in\mathscr{F}$.
 
 Now the functor $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ is very simple
-(but less "interpretable"). The object part is given by $\ell\in L\mapsto\{p\in
-L | \ell\not\le p\}$ (so $L$ is mapped into a topology), and the morphism part
-is $(\psi:L\rightarrow M)\mapsto(\{p\in L | \ell\not\le p\}\mapsto\{\psi(p) |
-p\in L, \ell\not\le p\})$ which is continuous.
+(but less "interpretable"). The object part is given by $\ell\in L\mapsto\\{p\in
+L | \ell\not\le p\\}$ (so $L$ is mapped into a topology), and the morphism part
+is $(\psi:L\rightarrow M)\mapsto(\\{p\in L | \ell\not\le p\\}\mapsto\\{\psi(p) |
+p\in L, \ell\not\le p\\})$ which is continuous.
 
 #### The Adjunction
 First, as promised, let's see that locale-morphisms preserve points. It seems
@@ -508,7 +508,7 @@ L @>f>> M
 \end{CD}$$
 
 Where $L,M$ are locales, $f:L\rightarrow M$ is a locale-morphism,
-$f\_{|\{\mathscr{F}\}}$ is $f$ considered as a set-function restricted to
+$f\_{|\\{\mathscr{F}\\}}$ is $f$ considered as a set-function restricted to
 completely prime filters over $L$, and
 $\phi_L:L\rightarrow(\mathrm{Lc}\circ\mathrm{Sp})(L)$ is a
 $\mathrm{Frm}$-morphism defined as $\ell\mapsto\Sigma\_\ell$ (so
@@ -519,7 +519,7 @@ Recall that $(f^\*)^{-1}:\mathrm{Sp}(L)\rightarrow\mathrm{Sp}(M)$, where $f^\*$ 
 the left Galois adjoint to $f$, maps continuously completely prime filters over
 $L$ to completely prime filters over $M$, so $((f^\*)^{-1})^{-1}=f^\*$ maps open-
 sets from $\Omega\mathrm{Sp}(M)$ to open sets from $\Omega\mathrm{Sp}(L)$, which
-makes a $\mathrm{Frm}$-morphism, thus $f\_{|\{\mathscr{F}\}}$ is a
+makes a $\mathrm{Frm}$-morphism, thus $f\_{|\\{\mathscr{F}\\}}$ is a
 $\mathrm{Loc}$-morphism.
 
 The natural transformation corresponds to the unit $\lambda$ can be constructed
@@ -537,7 +537,7 @@ spaces may still have the same locales.
 One way to proceed, is by looking for a stronger separation axiom (but as weak
 as possible), that allows restoring the points of a space from its topology.
 Turns out, this separation axiom is $T_D$: for each $x\in X$ there is an open
-$x\in U$ such that $U/\{x\}$ is open as well (note: $T_1\Rightarrow
+$x\in U$ such that $U/\\{x\\}$ is open as well (note: $T_1\Rightarrow
 T_D\Rightarrow T_0$).
 
 Indeed, for $T_D$ spaces, we have the following theorem (Thron): Let $X$ be a
