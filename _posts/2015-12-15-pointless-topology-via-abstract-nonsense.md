@@ -86,7 +86,7 @@ assertion is found, is guaranteed to terminate after a finite number of steps).
 Such reasoning can be applied to the other connectives to form a logical theory
 called propositional geometric logic. Why "geometric"? This may be a good time
 to recall the etymology of the term "geometry" (keeping in mind the rulers from
-earlier): from Greek, combination of of "ge" ("earth, land") and "metria" ("a
+earlier): from Greek, combination of "ge" ("earth, land") and "metria" ("a
 measuring of"). "measurement of land".
 
 This theory can be algebraically represented by the Lindenbaum–Tarski process
@@ -413,12 +413,12 @@ $f\_\mu(x)=x\circ\mu^\mathrm{op}\in\mathrm{Sp}(M)$.
 The second construction is also easily interpretable. First, recall the
 definitions:
 
-* A Filter $\mathscr{F}$ on a lattice $X$ is a non-empty subset of $X$ such that
+* A **filter** $\mathscr{F}$ on a lattice $X$ is a non-empty subset of $X$ such that
 $\mathscr{F}=\uparrow G$ for some $G\subseteq X$ and
 $x,y\in\mathscr{F}\Rightarrow x\land y\in\mathscr{F}$.
-* Filter $\mathscr{F}$ on a lattice $L$ is **Prime** iff $a_1\lor
+* A filter $\mathscr{F}$ on a lattice $L$ is **Prime** iff $a_1\lor
 a_2\in\mathscr{F}$ implies that $a_1\in\mathscr{F}$ or $a_2\in\mathscr{F}$.
-* Filter $\mathscr{F}$ on a lattice $L$ is **Completely Prime** iff the above
+* A filter $\mathscr{F}$ on a lattice $L$ is **Completely Prime** iff the above
 holds for arbitrary joins: $\bigvee{a_i\in\mathscr{F}}\Rightarrow\exists a_i$
 s.t. $a_i\in\mathscr{F}$.
 
