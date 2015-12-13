@@ -41,7 +41,7 @@ amount of hand-waving.
 Generally, Stone duality relates geometric objects and algebraic objects.
 Specifically, it establishes a precise relation between the category
 $\mathrm{Top}$ of topological spaces with homeomorphisms between them and the
-category $\mathrm{Loc}$ whose objects are certain type of lattices called
+category $\mathrm{Loc}$ whose objects are a certain type of lattices called
 "Locales".
 
 Taking a geometric perspective, this duality is motivated by thinking of a
