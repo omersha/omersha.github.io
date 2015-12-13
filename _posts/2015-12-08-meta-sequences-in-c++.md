@@ -4,7 +4,7 @@ title: "Meta-Sequences in C++"
 preview: With the introduction of variadic templates to C++, meta-sequences became a central idiom in meta-programming. The standard implementation is not always the best choice.
 --- 
 
-The relation between C++ and C is somewhat of an anomaly; Usually abstraction
+The relation between C++ and C is somewhat of an anomaly; usually abstraction
 hurts performance, yet C++ code often compiles to a more efficient executable
 than its C equivalent. Templates deserve a lot of the credit for this, as they
 allow the compiler to resolve at compile-time much of the abstraction required
