@@ -413,8 +413,8 @@ $f\_\mu(x)=x\circ\mu^\mathrm{op}\in\mathrm{Sp}(M)$.
 The second construction is also easily interpretable. First, recall the
 definitions:
 
-* A **filter** $\mathscr{F}$ on a lattice $X$ is a non-empty subset of $X$ such that
-$\mathscr{F}=\uparrow G$ for some $G\subseteq X$ and
+* A **filter** $\mathscr{F}$ on a lattice $L$ is a non-empty subset of $L$ such that
+$\mathscr{F}=\uparrow G$ for some $G\subseteq L$ and
 $x,y\in\mathscr{F}\Rightarrow x\land y\in\mathscr{F}$.
 * A filter $\mathscr{F}$ on a lattice $L$ is **Prime** iff $a_1\lor
 a_2\in\mathscr{F}$ implies that $a_1\in\mathscr{F}$ or $a_2\in\mathscr{F}$.
