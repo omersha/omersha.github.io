@@ -32,6 +32,10 @@
     }
 }
 
+.site-title #trivial {font-family: $title-trivial-font-family;}
+.site-title #wrong {font-family: $title-wrong-font-family;}
+.site-title #or {font-family: $title-or-font-family;}
+
 .site-subtitle {
     line-height: 10px;
     color: $subtitle-color;

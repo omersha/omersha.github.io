@@ -7,8 +7,12 @@
 
 // Our variables
 $text-font-family: 'PT Serif', Georgia, serif;
-$title-font-family: Helvetica, Arial, sans-serif;
 $code-font-family: 'Source Code Pro', Courier, monospace;
+$title-font-family: Helvetica, Arial, sans-serif;
+
+$title-trivial-font-family: Helvetica, Arial, sans-serif;
+$title-wrong-font-family: "Rock Salt", cursive;
+$title-or-font-family: "Times New Roman", serif;
 
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
