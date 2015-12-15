@@ -13,7 +13,7 @@ many people used FFT before 1965 (no one but Gauss, I think). Indeed, computers
 forced mathematicians to work harder and harder in order to keep annoying
 engineers away from their offices.
 
-This post is about Stone Duality: a theory that relates geometry and algebra
+This post is about Stone Duality: a result that relates geometry and algebra
 using a mathematical framework affectionately known as "abstract nonsense", and
 gives rise to a perspective on topology which is self-admittedly pointless. This
 is undoubtedly an heroic attempt to achieve pureness and inapplicability. Alas,
