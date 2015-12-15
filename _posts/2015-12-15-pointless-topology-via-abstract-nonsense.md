@@ -70,7 +70,7 @@ good model of such assertions is provided by thinking of physical rulers. Given
 a ruler of length $N$, it may be possible to verify that an object is strictly
 shorter then $N$, but due to measurement error, it's impossible to verify that
 an object's length is exactly $N$. So the assertion "Zoidberg's height is less
-then 160cm" is affirmative, while the assertion "Zoidberg's height is at least
+than 160cm" is affirmative, while the assertion "Zoidberg's height is at least
 160cm" is not affirmative (it might be true if his height is exactly 160cm, but
 then it's not confirmable).
 
