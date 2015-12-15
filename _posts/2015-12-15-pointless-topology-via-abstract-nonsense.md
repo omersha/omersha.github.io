@@ -8,7 +8,7 @@ In 1940. G.H. Hardy published his essay "A Mathematician's Apology" in which he
 used number theory as a prominent example for pure and inapplicable mathematics.
 He meant it seriously, not as a joke. To the defense of his apology (pun a bit
 intended), at the time only a handful of programmers thought about hash-tables,
-cryptosystems were yet to be widely implemented in E-commerce platforms and not
+cryptosystems were yet to be widely implemented in E-commerce platforms, and not
 many people used FFT before 1965 (no one but Gauss, I think). Indeed, computers
 forced mathematicians to work harder and harder in order to keep annoying
 engineers away from their offices.
@@ -240,9 +240,9 @@ z\Leftrightarrow(x,y)\le(z,z)$.
 To conclude, I'll just mention that the composition of two adjoint functors give
 rise to a monad, and that any monad is representable as an adjunction. It should
 be noted that while the discussion above focused on adjoint functors, adjunction
-is a concept that applies generally in 2-categories. The idea is the same (a
+is a concept that applies generally in 2-categories. The idea is the same: a
 prototypical 2-category is the category $\mathrm{Cat}$ of small categories as
-objects, functors as morphisms and natural-transformation as 2-cells).
+objects, functors as morphisms and natural-transformation as 2-cells.
 
 This should feel familiar to programmers. After all, a monad is just a monoid in
 the category of endofunctors. No problem. 
