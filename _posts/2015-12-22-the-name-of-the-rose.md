@@ -15,8 +15,6 @@ term I used, it became clear that person was already familiar with the concept
 under a different name. But what initially looked like nothing more than a
 confusing lingo, turned out to be of fundamental significance.
 
-The following are three made-up scenarios that illustrate this. 
- 
 ### An engineer, a statistician and a algorithmician walk into a bar... 
  
 #### Noise Cancellation
@@ -184,8 +182,8 @@ R1 = normalize(realA[10:] + numpy.random.normal(0.0, 0.5, 1000))
 R2 = normalize(realB[10:] + numpy.random.normal(0.0, 0.5, 1000))
 {% endhighlight %}
  
-He want to make a decision based on the difference of the current traffic
-estimations based on real-time repotrs $R_1-R_2$, and the difference of the
+The decision is going to be based on the difference between the current traffic
+estimations based on real-time repotrs $R_1-R_2$, and the difference between the
 current traffic estimations based on the current time and date $A_1-A_2$: 
 
 **In [5]:**
@@ -227,7 +225,7 @@ plot_decisions(classifier, numpy.vstack((R, A)).T, real_classes, h=0.2, title=No
 ![png]({{ site.baseurl }}/assets/the-name-of-the-rose_files/the-name-of-the-rose_14_0.png) 
 
  
-On the other hand, online learning is adaptive to the temporal structure, and
+On the other hand, the online learning algorithm is adaptive to the temporal structure, and
 works rather well: 
 
 **In [7]:**
@@ -259,7 +257,8 @@ vary over time.
 An algorithm designer is assigned with the task of writing the engine that
 interacts with the demand-side platform. The standard framework for constructing
 a policy that maximizes long-term utilities based on observed immediate rewards
-is **temporal differences**. In the current simplified setting, the policy
+is [**Temporal Differences**](http://www.scholarpedia.org/article/Temporal_difference_learning).
+In the current simplified setting, the policy
 should be based on a linear function of an "age signal" $x_t\in[0,1]$ (where 1
 means a viewer in his twenties, and 0 means the viewer is either much younger or
 much older), and a "economic status" signal $y_t\in[0,1]$ (where 1 means
@@ -275,7 +274,7 @@ Dealing with (potentially infinite) sequences of rewards leads to the idea of
 "discounted rewards" (with a discount factor $\gamma$). It can be derived
 axiomatically by specifying some reasonable properties of [temporal
 preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), but
-it can be also justifying intuitively by considering the usual stories about the
+it can be also justified intuitively by considering the usual stories about the
 risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
 present. So the utility at time $t$ is $U(x_t,y_t)=
@@ -292,11 +291,9 @@ for $(x,y)\neq (x_t,y_t)$ (where $\alpha$ is the learning rate).
 
 This is knowns as $\mathrm{TD}{(0)}$ rule, and it's a special case of the
 $\mathrm{TD}(\lambda)$ algorithm which I won't discuss here ("TD" stands for
-[temporal
-difference](http://www.scholarpedia.org/article/Temporal_difference_learning)).
-In this case, $\hat{U}\_t(x,y)=\omega_1x+\omega_2y$, so the update rule should be
-applied to update the weights $(\omega_1,\omega_2)$. This can be naturally done
-by $\omega_1\leftarrow\omega_1+\alpha
+temporal differences). In this case, $\hat{U}\_t(x,y)=\omega_1x+\omega_2y$, so
+the update rule should be applied to update the weights $(\omega_1,\omega_2)$.
+This can be naturally done by $\omega_1\leftarrow\omega_1+\alpha
 (r_t+\gamma\hat{U}\_{t-1}(x_t,y_t)-\hat{U}\_{t-1}(x\_{t-1},y\_{t-1})) x$ (and the
 same applies for $\omega_2$).
 
@@ -321,7 +318,7 @@ def execute_engine(count):
 states, rewards = execute_engine(20000)
 {% endhighlight %}
  
-Since the profits from an add are both delayed and stochastic, at any given time
+Since the profits from an ad are both delayed and stochastic, at any given time
 there will be no relation between the current user, and the current reward -
 which makes it hard (impossible?) to learn a good decision rule by using
 supervised learning algorithms: 
@@ -337,8 +334,8 @@ plt.title('Economic Factors vs. Reward')
 plt.plot(states[-1000:, 1], rewards[-1000:], '.')
 plt.show()
 
-plt.title('Both Factors vs. Reward')
 plt.gca(projection='3d').plot_trisurf(states[-1000:, 0], states[-1000:, 1], rewards[-1000:], cmap=cm.coolwarm)
+plt.title('Both Factors vs. Reward')
 plt.show()
 {% endhighlight %}
 
@@ -399,18 +396,18 @@ obscure the different perspectives that led to the resulting algorithms, and the
 price is losing those nuances. This could be perfectly reasonable had those
 perspectives ran their course. But this is hardly the case: generalizations of
 this ILT algorithm are utterly unalike when guided by each of those different
-point of views.
+points of view.
 
 For example, the LMS filter may be generalized to other adaptive filters, such
 as the Kalman filter which is commonly used in varied situations, from
 trajectory optimization to econometric smoothing. The perceptron may be
 generalized to other classification algorithms (in a way, it's a special case of
 logistic regression, support vector machines and feedforward neural networks).
-And the temporal difference algorithm is a basis for many algorithms (e.g.
+And the temporal differences algorithm is a basis for many algorithms (e.g.
 Q-learning) in optimal control and autonomous agents, and it can be used to
 train computers to play backgammon or super-mario better than you can.
 
-None of those generalizations are obvious by considering the ILT alone. But all
+None of those generalizations is obvious by considering the ILT alone. But all
 of them are quite natural as a development of the ideas that led to the ILT in
 the first place, from the 3 different starting points.
 
