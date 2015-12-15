@@ -118,7 +118,7 @@ grasp.
 A natural transformation is a relation between two functors that share domain
 and codomain $F_1, F_2: C\rightarrow D$ (here $C$ and $D$ are categories). A
 natural transformation $T:F_1\rightarrow F_2$ assigns each object $X$ in $C$, a
-morphism $\eta_X$ in $D$, such that the so-called "naturality condition" hold:
+morphism $\eta_X$ in $D$, such that the so-called "naturality condition" holds:
 for any $(f:X\rightarrow Y)\in C$ the following diagram must commute:
 
 $$\require{AMScd}
