@@ -58,7 +58,7 @@ evaluated, in compile time, to this:
 auto pool = std::array<int,N> {DummyType(0), DummyType(1), DummyType(2)};
 {% endhighlight %}
 
-So the compiler is in position to eliminate copies, moves and function calls,
+So the compiler is in a position to eliminate copies, moves and function calls,
 and generate in-place consturctions wherever possible. As a matter of fact, with
 this main function -
 
@@ -102,7 +102,7 @@ std::array<std::result_of_t<Ctor(size_t)>, N> MakeArray(Ctor&& ctor)
 {% endhighlight %}
 
 Let's look at the first template. The first argument is a callback that
-constructs (or returns) elements to be placed in the array (here, it takes an
+returns elements to be placed in the array (here, it takes an
 index as a parameter), and the second argument has no name. This means the
 function never uses its value. Only its type matters. The method returns an
 array whose elements' type is the same type returned by the callable given as

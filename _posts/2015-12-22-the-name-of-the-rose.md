@@ -123,7 +123,7 @@ traffic based on the time (e.g. the notorious traffic jams of Wednesday
 mornings) - but it's not clear how to factor it into a decision, due to the
 instability of the traffic patterns. For example, sometimes traffic jams tend to
 clear up quickly and current reports should carry little weight relative to the
-day and time,  and sometimes they persistent and reports should be taken very
+day and time,  and sometimes they're persistent and reports should be taken very
 seriously.
 
 This hints towards online learning: constantly updating the decision rule based
@@ -265,21 +265,24 @@ much older), and a "economic status" signal $y_t\in[0,1]$ (where 1 means
 "spendthrift").
 
 At each time-step, the engine receives a reward $r_t$, which measures the
-current income due to sales. Of course, the value of $r_t$ is the noisy result
+flow of incomes from sales. Of course, the value of $r_t$ is the noisy result
 of previous exposure to ads, and has nothing to do with the decision made by the
 engine at time $t$.
 
-
 Dealing with (potentially infinite) sequences of rewards leads to the idea of
-"discounted rewards" (with a discount factor $\gamma$). It can be derived
+"discounted rewards" (with a discount factor $\gamma$). So the utility at time
+$t$ is $U(x_t,y_t)=E[\sum\gamma^{i-1}r\_{t+i}|(x_t,y_t)]$, and the engine
+maintains an estimation $\hat{U}\_t\approx U$, and iteratively updates it
+based on his observations.
+
+Discounting can be understood in several ways: it can be derived
 axiomatically by specifying some reasonable properties of [temporal
-preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), but
-it can be also justified intuitively by considering the usual stories about the
+preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), or
+it can be seen as a way to incorporate finite but unknown hotizons, or finalll,
+it can be justified economically by considering the usual stories about the
 risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
-present. So the utility at time $t$ is $U(x_t,y_t)=
-E[\sum\gamma^{i-1}r\_{t+i}|(x_t,y_t)]$. The engine maintains an estimation
-$\hat{U}\_t\approx U$, and iteratively updates it based on his observations.
+present.
 
 For example, say that in time $t-1$ the engine observed $(x\_{t-1},y\_{t-1})$,
 rewarded $r\_{t-1}$ and served an ad based on the estimation
