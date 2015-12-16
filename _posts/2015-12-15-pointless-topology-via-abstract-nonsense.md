@@ -178,7 +178,7 @@ We have to provide 2 natural transformations, counit $\epsilon:C\circ
 I\rightarrow 1_Z$ and unit $\eta:1_Q\rightarrow I\circ C$ such that
 $1_C=\epsilon C\circ C\eta$ and $1_I=I\epsilon\circ\eta I$. The counit
 $\epsilon$ is trivial: $C\circ I:Z\rightarrow Z$ is $1_Z$ (it takes an integer,
-"cast it" as a rational number and ceil it, and it's trivially monotone).
+"casts it" as a rational number and ceils it, and it's trivially monotone).
 
 As for the unit $\eta$, the functor $I\circ C:Q\rightarrow Q$ ceils a rational
 number, and "casts it" back to $Q$, and it maps $x\le y$ to $\lceil
@@ -488,7 +488,7 @@ upper-component in a unique Galois connection $(\mu^\*, \mu)$ (that is,
 $\mu^\*:M\rightarrow L$ and $\mu^\*(a)\le b\Leftrightarrow a\le\mu(b)$). Thus
 $x\land y\le\mu(\ell)$ implies $\mu^\*(x)\land\mu^\*(y)=\mu^\*(x\land y)\le\ell$,
 and since $\ell$ is meet-irreducible in $L$ then assuming w.l.g
-$\mu^\*(x)\le\ell$ implied $x\le\mu(\ell)$ and $\mu(\ell)$ is meet-irreducible in
+$\mu^\*(x)\le\ell$ implies $x\le\mu(\ell)$ and $\mu(\ell)$ is meet-irreducible in
 $M$.
 
 Finally - the functors $\mathrm{Lc}:\mathrm{Top}\rightarrow\mathrm{Loc}$ and
@@ -562,7 +562,7 @@ zooming-in always leads to a point. There are no "missing point" in Sober
 spaces. $T_D$ does not imply Sobriety, and Sobriety does not imply $T_D$. But
 any Hausdorff space is sober, any finite $T_0$-space is sober, any Noetherian
 Alexandroff Space is sober, and (my sources tell me) posets with the Scott
-topologies are typically sober. So sobriety is common.
+topology are typically sober. So sobriety is common.
 
 A locale $L$ is spatial only when it is isomorphic to the topology of its own
 spectrum. Otherwise, it is not isomorphic to the topology of any space. So $L$
