@@ -11,7 +11,7 @@ conventions form, and some terms disappear while others acquire universal
 meaning. But sometimes the distinction is not as superficial as it may seem.
 
 Recently I encountered such a situation, in which while explaining someone a
-term I used, it became clear that person was already familiar with the concept
+term I used, it became clear that this person was already familiar with the concept
 under a different name. But what initially looked like nothing more than a
 confusing lingo, turned out to be of fundamental significance.
 
