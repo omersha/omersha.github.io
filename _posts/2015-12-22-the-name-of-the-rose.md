@@ -278,7 +278,7 @@ based on his observations.
 Discounting can be understood in several ways: it can be derived
 axiomatically by specifying some reasonable properties of [temporal
 preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), or
-it can be seen as a way to incorporate finite but unknown hotizons, or finalll,
+it can be seen as a way to incorporate finite but unknown horizons, or finalll,
 it can be justified economically by considering the usual stories about the
 risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
