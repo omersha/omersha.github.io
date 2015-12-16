@@ -274,8 +274,8 @@ Then $p(C_1\land C_2)=p(C_1)p(C_2)$ and $p(C_1\lor C_2)=1-(1-p(C_1))(1-p(C_2))$.
 
 If we're given a bitstream $M$ of length $n$ (with $p(M)\ge\frac{1}{2}$), and
 have a "key" $K$ with the same length, then $M\land K$ is a new bitstream of
-length $n$ with increased entropy, $M\lor K$ is a new bitstream of length $n$
-with decreased entropy, and the change of entropy is controllable by choosing
+length $n$ with an increased entropy, $M\lor K$ is a new bitstream of length $n$
+with a decreased entropy, and the change of entropy is controllable by choosing
 $p(K)$.
 
 We can obtain a new bitstream $M'$ with $p(M')>\frac{1}{2}$ by taking $M':=M\lor
