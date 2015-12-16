@@ -397,24 +397,24 @@ Thingie") and forget all those obscure terms we introduced ("lms", "perceptron",
 Should we? The answer depends on the price. Adopting the ILT suggestion will
 obscure the different perspectives that led to the resulting algorithms, and the
 price is losing those nuances. This could be perfectly reasonable had those
-perspectives ran their course. But this is hardly the case: generalizations of
+perspectives ran their course, but this is hardly the case: generalizations of
 this ILT algorithm are utterly unalike when guided by each of those different
 points of view.
 
 For example, the LMS filter may be generalized to other adaptive filters, such
 as the Kalman filter which is commonly used in varied situations, from
 trajectory optimization to econometric smoothing. The perceptron may be
-generalized to other classification algorithms (in a way, it's a special case of
-logistic regression, support vector machines and feedforward neural networks).
-And the temporal differences algorithm is a basis for many algorithms (e.g.
-Q-learning) in optimal control and autonomous agents, and it can be used to
+generalized to other classification algorithms (e.g. logistic regression,
+support vector machines and feedforward neural networks). And the temporal
+differences algorithm is a basis for many algorithms (e.g. Q-learning) in
+optimal control and autonomous agents, and it can be used to
 train computers to play backgammon or super-mario better than you can.
 
 None of those generalizations is obvious by considering the ILT alone. But all
 of them are quite natural as a development of the ideas that led to the ILT in
 the first place, from the 3 different starting points.
 
-It worth pointing out that this phenomenon is not unusual, and definitely not
+It's worth pointing out that this phenomenon is not unusual, and definitely not
 limited to machine learning. For
 [example](http://www.math.ucla.edu/~tao/preprints/forms.pdf), in elementary
 calculus an "integral", an "area under the curve" and an "anti-derivative" are
