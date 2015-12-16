@@ -127,7 +127,7 @@ day and time,  and sometimes they're persistent and reports should be taken very
 seriously.
 
 This hints towards online learning: constantly updating the decision rule based
-on its recent performances. The
+on its recent performance. The
 [perceptron](https://en.wikipedia.org/wiki/Perceptron) is the simplest online
 **classification algorithm**. It is very roughly modeled after a biological
 single neuron (the McCulloch–Pitts model). It may either "fire" or "hold", and
@@ -139,9 +139,9 @@ threshold. Schematically (based on images from Wikipedia):
 
 The weights are learnt in a supervised manner using an algorithm known as "the
 perceptron's update rule", which is applicable as an online algorithm. The
-update rule is rather heuristic: If there's no error, keep the weights;
+update rule is rather heuristic: if there's no error, keep the weights;
 otherwise, change the weight of each input in proportion to its magnitude, in
-the opposite direction of the error. If we represent "fire" by 1 and "hold" by
+the opposite direction of the error. If "fire" is represented by 1 and "hold" by
 0,  the rule is simply $w\_{i,t+1}\leftarrow w\_{i,t}+\delta(y\_t-\hat{y}\_t)x_i$. 
 
 **In [3]:**
@@ -278,7 +278,7 @@ based on his observations.
 Discounting can be understood in several ways: it can be derived
 axiomatically by specifying some reasonable properties of [temporal
 preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), or
-it can be seen as a way to incorporate finite but unknown horizons, or finalll,
+it can be seen as a way to incorporate infinite horizons with random stopping times, or finally,
 it can be justified economically by considering the usual stories about the
 risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
@@ -286,8 +286,8 @@ present.
 
 For example, say that in time $t-1$ the engine observed $(x\_{t-1},y\_{t-1})$,
 rewarded $r\_{t-1}$ and served an ad based on the estimation
-$\hat{U}\_{t-1}(x\_{t-1},y\_{t-1})=u_0$. Then in time $t$ it observes $(x_t,y_t)$,
-and experiences an immediate reward $r_t$. So one option the engine may employ,
+$\hat{U}\_{t-1}(x\_{t-1},y\_{t-1})=u_0$. Then in time $t$ it observed $(x_t,y_t)$,
+and experienced an immediate reward $r_t$. So one option the engine may employ,
 is to update $\hat{U}\_{t}(x\_{t-1},y\_{t-1})=\alpha(r_t+\gamma\hat{U}\_{t-1}(x_t,y\_
 t)-\hat{U}\_{t-1}(x\_{t-1},y\_{t-1}))$ and $\hat{U}\_{t}(x,y)=\hat{U}\_{t-1}(x,y)$
 for $(x,y)\neq (x_t,y_t)$ (where $\alpha$ is the learning rate).
