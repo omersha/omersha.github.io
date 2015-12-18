@@ -266,7 +266,7 @@ Bitwise operations are central to both ideas. Recall: $\land$ is
 
 As we have seen, it is possible to generate random bitstreams rather fast (e.g.
 using numpy.random.bytes). The first idea is to do just that, but then modify
-the stream's entropy by some bitwise operations relying on the following simple
+the stream's entropy by some bitwise operations relying on the following
 observation: Let $C$ be a random bitstream taken from $B(n,p)$, and denote
 $p(C)=p$.
 
@@ -299,7 +299,7 @@ assume $p(M')\ge\frac{1}{2}$ (or otherwise $\mathrm{not}$ the result).
 As a final improvement, I suggest to use both $\land$ and $\lor$ at each step
 (e.g. first $\land$, then $\lor$). The additional overhead of performing 2
 bitwise operations instead of 1 per block is negligible, and it allows us to
-get the same pseudo randomality we previously achieves using $r$ keys, by using
+get the same pseudo randomality we previously achieved using $r$ keys, by using
 just $\sqrt{r}$ keys. Specifically, if $p(M')\ge\frac{1}{2}$ we may do this with
 any arbitrarily choice of $p(K_\mathrm{and})$ and
 $p(K_\mathrm{or})=1-\frac{1-p(M')}{1-\frac{1}{2}p(K_\mathrm{and})}$. 
@@ -362,9 +362,9 @@ perturbator = AndOrPerturbator(0.67, 8*1024, 128)
  
 That's an improvement of ~6000%-7000% from the initial algorithm, but it's still
 slower than simply generating random bytes. Can we further approach the
-performances of numpy.random.bytes, while still control the entropy?
+performance of numpy.random.bytes, while still controlling the entropy?
 
-Yes we can. The key is switching from perturbation to generation. Instead of
+Yes we can. The key is to switch from perturbation to generation. Instead of
 using a pair of "keys" to perturbate external data, we will treat the keys as
 "building blocks" and combine them to generate new blocks, with the required
 entropy. The large combinatorial space of building-blocks can make the
@@ -433,7 +433,7 @@ combiner = CombinatorialGenerator(0.74, 8*1024, 1024*1024)
     10 loops, best of 3: 1.6 ms per loop
 
  
-The larger the blocks size, the faster this generator works. The price is a
+The larger the blocks, the faster this generator works. The price is a
 reduced pseudo randomality for long bitstreams. But as long as the bitstream
 size (in bytes) is less than "pool_size times block_bytes" this is not an
 issue for the purpose of testing compression, and it's easy (and quick) to
