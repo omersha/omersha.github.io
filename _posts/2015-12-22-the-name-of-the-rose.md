@@ -132,9 +132,12 @@ on its recent performance. The
 **classification algorithm**. It is very roughly modeled after a biological
 single neuron (the McCulloch–Pitts model). It may either "fire" or "hold", and
 the decision is based on whether its weighted accumulated input is crossing a
-threshold. Schematically (based on images from Wikipedia):
+threshold. Schematically:
 
+<figure>
 <img src="{{ site.baseurl }}/assets/the-name-of-the-rose_files/perceptron.png" width="750"/>
+<figcaption style="font-variant: small-caps;">on the left - an incoherent blob, on the right - pixelated image (based on wikipedia)</figcaption>
+</figure>
 
 
 The weights are learnt in a supervised manner using an algorithm known as "the
@@ -247,7 +250,7 @@ print "Accuracy: %.2f."%(numpy.sum(real_classes==classes_perceptron)/(len(classe
  
 #### Online Advertising
 A consumer product company starts a new campaign over the internet, and it needs
-to decide how much it worth paying for serving its new ad. The decision should
+to decide how much it is worth paying for serving its new ad. The decision should
 take into account the potential viewer demographics (say, age and economic
 status), and the evaluation must somehow mitigate the fact that the impact of
 the ads is indirect and delayed: it's impossible to relate a specific sale with
