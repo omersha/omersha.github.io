@@ -9,7 +9,7 @@ some compression features of a storage system (the source code is available
 [here](https://github.com/omersha/Redundancy-Generator)). The goal is to quickly
 generate a large block of data with a known compression ratio, and verify that the
 physical space required to store it matches its expected compressed size
-rather its actual size. 
+rather than its actual size. 
 
 Common lossless compression algorithms have a
 [deflate-like](https://en.wikipedia.org/wiki/DEFLATE) structure: their input
