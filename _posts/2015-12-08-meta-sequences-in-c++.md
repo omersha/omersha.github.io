@@ -22,7 +22,7 @@ Since they are the key idea behind many elegant solutions to various problems,
 it is not surprising that utilities for using them were included in the
 standard library (since [C++14](http://en.cppreference.com/w/cpp/utility)). It
 is surprising, though, that the implementation that comes with the STL is sometimes
-problematic and requires using homemade alternatives (this is the case, for
+problematic and may require using homemade alternatives (this is the case, for
 example, in gcc 5.1.0). So I'll discuss implementation details as well. 
  
 ### Compile-Time Array Initialization 
@@ -150,7 +150,7 @@ template<size_t... S> struct make_sequence_imp<0, S...> {using type = index_sequ
 template<size_t length> using make_index_sequence = typename make_sequence_imp<length>::type;
 {% endhighlight %}
 
-The third line is merely a syntactic sugar. The first line defines a template
+The third line is merely syntactic sugar. The first line defines a template
 class that encodes a postfix of the final sequence (```S...```) and a parameter
 ```N``` that counts the missing elements. This class is defined recursively, so that
 shorter postfixs are derived from longer postfixs. The second line is a
