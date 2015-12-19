@@ -6,10 +6,41 @@ preview: Controlling the entropy of pseudo-random bits in Python when performanc
 
 I was asked to write a simple utility in Python, meant to be used for testing
 some compression features of a storage system (the source code is available
-[here](https://github.com/omersha/Redundancy-Generator)).
+[here](https://github.com/omersha/Redundancy-Generator)). The goal is to quickly
+generate a large block of data with a known compression ratio, and verify that the
+physical space required to store it matches its expected compressed size
+rather its actual size. 
 
-It is essentially just a random bitstream generator, with some specific requirements.
-Were it not for those requirements, it would have come down to a one-liner: 
+Common lossless compression algorithms have a
+[deflate-like](https://en.wikipedia.org/wiki/DEFLATE) structure: their input
+is understood as a sequence of symbols; it first goes through a
+[dictionary coder](https://en.wikipedia.org/wiki/Dictionary_coder) that exploits
+sequential patterns to compactly re-encode the data using new symbols which are
+sequentially independent; then it goes though an
+[entropy coder](https://en.wikipedia.org/wiki/Entropy_encoding) that performs a
+symbol-by-symbol encoding that achieves data reduction by assigning each symbol
+a representation whose length is inversely proportional to the symbol's frequency.
+
+The said storage system implemented an algorithms of this sort. Furthermore, it
+also implemented a form of
+[data-deduplication](https://en.wikipedia.org/wiki/Data_deduplication). So
+strategies that generate large blocks of data by naively gluing small
+blocks of data were a no-go.
+
+As a side note (and a teaser) such compression algorithms are not generally
+optimal. As a matter a fact, a compression algorithm can't be generally optimal:
+even the measure of compressibility, the
+[Kolmogorov complexity](https://en.wikipedia.org/wiki/Kolmogorov_complexity),
+is provably uncomputable. So while the above pipeline is prevalent, other
+compression schemes that may potentially work better, do exist. I entertained
+myself in the past with the design of a compression algorithm that was based
+on employing a generative neural network instead of a dictionary coder,
+and have a planned future post on this little experiment.
+
+Getting back to the topic, the conclusion from the above is that the
+requested utility is essentially just an efficient random bitstream generator,
+with the ability to produce patternless bits with any given entropy. Were it
+not for those requirements, it would have come down to a one-liner:
 
 **In [1]:**
 
@@ -18,12 +49,9 @@ def random_bitstream1(size_in_bytes):
     return numpy.random.bytes(size_in_bytes)
 {% endhighlight %}
  
-The first requirement, obvious in this context, was the ability to produce
-patternless bits with any given entropy ("patternless" here means with no
-dependencies exploitable by dictionary coders).
-
-The straightforward approach is to follow the definition, and generate the
-bitstream by a sequence of coin flips, using a biased coin: 
+But this gives no control over the entropy of the generated bits. The
+straightforward approach for this, is to follow the definition, and
+generate the bitstream by a sequence of coin flips, using a biased coin: 
 
 **In [2]:**
 
