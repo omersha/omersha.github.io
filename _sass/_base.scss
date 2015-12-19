@@ -150,6 +150,15 @@ pre {
     }
 }
 
+.linenodiv pre {
+   background: $background-color;
+   color: $grey-color;
+   padding: 8px 12px;
+   > code {
+      background: $background-color;
+      font-size: $smallest-font-size;
+   }
+}
 
 
 /**
