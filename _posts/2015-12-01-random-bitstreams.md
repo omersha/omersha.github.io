@@ -15,7 +15,7 @@ Common lossless compression algorithms have a
 [deflate-like](https://en.wikipedia.org/wiki/DEFLATE) structure: their input
 is understood as a sequence of symbols; it first goes through a
 [dictionary coder](https://en.wikipedia.org/wiki/Dictionary_coder) that exploits
-sequential patterns to compactly re-encode the data using new symbols which are
+sequential patterns to compactly re-encode the data using new symbols that are
 sequentially independent; then it goes through an
 [entropy coder](https://en.wikipedia.org/wiki/Entropy_encoding) that performs a
 symbol-by-symbol encoding that achieves data reduction by assigning each symbol
