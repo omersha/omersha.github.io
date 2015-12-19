@@ -12,3 +12,6 @@ github_username:  omersha
 markdown: kramdown
 highlighter: pygments
 math_engine: mathjax
+
+gems:
+  - jekyll-feed
