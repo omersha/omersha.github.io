@@ -35,7 +35,7 @@ is provably uncomputable. So while the above pipeline is prevalent, other
 compression schemes that may potentially work better, do exist. I entertained
 myself in the past with the design of a compression algorithm that was based
 on employing a generative neural network instead of a dictionary coder,
-and have a planned future post on this little experiment.
+and have a planned future post on the results of this little experiment.
 
 Getting back to the topic, the conclusion from the above is that the
 requested utility is essentially just an efficient random bitstream generator,
