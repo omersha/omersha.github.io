@@ -257,3 +257,15 @@
 .preview-text {
    color: $preview-color;
 }
+
+.abstract_box {
+   position: relative;
+   width: 75%;
+   left: 10%;
+   margin: 0 1em 25px 1em;
+   text-align: center;
+   font-size: 0.9em;
+   border-top: 1px dotted black;
+   border-bottom: 1px dotted black;
+   color: lighten($text-color, 40%);
+}
