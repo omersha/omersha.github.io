@@ -387,7 +387,7 @@ model "locations", then a point can be naturally thought of in terms of all the
 locations containing it. So a point can be identified with a characteristic
 function $\mu:L\mapsto\\{0,1\\}$ that preserve arbitrary meets and finite joins
 (finite, since an arbitrary join of non-neighborhoods may be a neighborhood),
-i.e., $\mu$ is a $\mathrm{Loc}$-morphism. It's dual is exactly the
+i.e., $\mu$ is a $\mathrm{Loc}$-morphism. Its dual is exactly the
 $\mathrm{Frm}$-morphism constructed above.
 
 To specify $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$, we need to
