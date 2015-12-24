@@ -390,7 +390,7 @@ plt.show()
 ### Tomato, Tomahto?
 The above are three completely different formulations, motivated by completely
 different scenarios. But at the end, the essentially same algorithm was derived:
-it's the same iterative scheme, with almost identical update rules. A clear case
+it's the same iterative scheme, with an lmost identical update rules. A clear case
 of convergent evolution.
 
 The obvious suggestion is: let's just call that algorithm ILT ("Iterative Linear

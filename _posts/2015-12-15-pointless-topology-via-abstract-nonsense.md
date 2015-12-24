@@ -257,8 +257,8 @@ between them:
 2. As the structure of the open-sets of all topological spaces.
 
 Explicitly, an Heyting algebra is a distributive lattice with implications. A
-lattice is distributive whenever meets distribute over joins $x\land(y\lor
-z)=(x\land y)\lor(x\land z)$ (like unions distribute over intersections), and
+lattice is distributive whenever meets distribute over joins ($x\land(y\lor
+z)=(x\land y)\lor(x\land z)$, like unions distribute over intersections), and
 implications are defined via the equational relation $z\le x\rightarrow y
 \Leftrightarrow z\land x\le y$. As a programmer at heart, I intuitively think of
 Heyting algebras as "exponentiated lattices" and of implications as analogous to
@@ -327,11 +327,9 @@ should we understand infinitary meets of open sets?
 Let $V_i$ be an infinite sequence of open sets. Then in general $\land V_i$
 won't be given as an intersection of open sets. What then? It should satisfy
 $\land V_i\le V_j$, and if $W\le V_i$ for all $i$ then $W\le\land V_i$. So
-$\land V_i$ should be the "largest" open set containing $\cap V_i$. That is,
-take the arbitrary union of all the open sets that are disjoint to $\cap V_i$,
-and obtain a open set. Its complement is a closed set whose interior is $\land
-V_i$. Implications then, are given by $U\rightarrow V := \mathrm{int}(U^c\cup
-V)$. 
+$\land V_i$ should be the "largest" open set contained in $\cap V_i$, that is,
+$\land V_i=\mathrm{int}{(\cap V_i)}$. Implications then, are given by
+$U\rightarrow V := \mathrm{int}(U^c\cup V)$. 
  
 ### 4. Localification and Spatialization
 Alright, now we're in business. We are about to construct a **localification**
@@ -461,7 +459,7 @@ filters (heuristically, a principal prime ideal is a minimal collection of
 "negligible sets" that contains a point).
 
 
-#### Recipe 4: Points as Meet-Irreducible Element
+#### Recipe 4: Points as Meet-Irreducible Elements
 The forth construction essentially follows from the third: an element $\ell\in
 L$ is meet-irreducible whenever the principle ideal $\downarrow\ell$ is also
 prime. Alternatively, it follows from the second construction: if $\mathscr{F}$
