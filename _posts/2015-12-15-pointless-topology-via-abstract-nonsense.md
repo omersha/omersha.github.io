@@ -24,7 +24,7 @@ Yet, I'm not going to discuss applications. My motivation here is missionary:
 everyone should know this stuff. It's not a matter of mathematical beauty
 (though it is mathematically beautiful), but a matter of usefulness. Conceptual
 usefulness, not practical. When I first studied it, I was really annoyed for not
-studying it earlier, as it would have made so many things so much easier. In
+having studied it earlier, as it would have made so many things so much easier. In
 terms of "Aha!-moments per second", the experience of studying it ranks high on
 the list.
 
@@ -51,7 +51,7 @@ encapsulated limiting process: a "point" is identified with the collection of
 all of its neighbourhoods.
 
 Now, since the set of all well-defined locations of a space can be characterized
-algebraically (more on this soon), we potentially may get 2 descriptions of the
+algebraically (more on this soon), we may potentially get 2 descriptions of the
 same thing: as a space of points with some notion of proximity, and as an
 algebraic structure of locations.
 
