@@ -109,11 +109,11 @@ a proper duality. This weaker (yet rich) relation is **adjunction**. This is a
 categorical notion that relates two functors via a pair of natural
 transformations, which are themselves a way to relate two functors.
 
-I won't explain categories and functors here: this is common knowledge, and the
+I won't explain categories and functors here: that's common knowledge, and the
 concepts are easy to understand simply by reading the definitions (which can be
-found anywhere). But I will say something about natural transformations and
-adjunctions, which might be somewhat less familiar and are certainly harder to
-grasp.
+easily [found](https://en.wikipedia.org/wiki/Functor)). But I will say something
+about natural transformations and adjunctions, which might be somewhat less
+familiar and are certainly harder to grasp.
 
 A natural transformation is a relation between two functors that share domain
 and codomain $F_1, F_2: C\rightarrow D$ (here $C$ and $D$ are categories). A
@@ -133,12 +133,21 @@ homotopy](http://mathoverflow.net/questions/64365/natural-transformations-as-
 categorical-homotopies) between the functors. So if $I$ denotes the interval
 category $0\rightarrow 1$, then a natural transformation $T:F_1\rightarrow F_2$
 is a functor $I\times C\rightarrow D$ such that $T(0,X)=F_1(X)$ and
-$T(1,X)=F_2(X)$. Another useful mental model, is to think of categories as
-graphs. The graph indexing category $\mathrm{GrIn}$ is the category $\mathrm{Ar}
-\underset{\text{tgt}}{\overset{\text{src}.}{\rightrightarrows}} \mathrm{Ve}$. In
-this light, a functor $G:\mathrm{GrIn}\rightarrow\mathrm{Set}$ is a graph, and a
-natural transformation of two such functors is precisely the same thing as a
-graph homomorphism.
+$T(1,X)=F_2(X)$.
+
+Another useful mental model comes from thinking about categories as graphs. The
+graph indexing category, denoted $\mathrm{GrIn}$, is the category $\mathrm{Ed}
+\underset{\text{tgt}}{\overset{\text{src}.}{\rightrightarrows}} \mathrm{Ve}$.
+Programmers would find it easy to think of this category as a defintion of a 
+class for graphs. Its 2 objects ($\mathrm{Ed}$ and $\mathrm{Ve}$) represent
+the 2 types of entities constitute a graph (edges and vertices, respectively),
+and its 2 arrows represent the 2 relations that may hold in a graph: a vertex
+could be either a source of an edge or a target of an edge (or neither).
+
+In this light, a functor $G:\mathrm{GrIn}\rightarrow\mathrm{Set}$ is a concrete
+graph ("an instance of the category"), and a natural transformation of two such
+functors is precisely the same thing as a graph homomorphism. This is an example
+of the categorical notion of a ["diagram"](https://en.wikipedia.org/wiki/Diagram_(category_theory)).
 
 As for adjunctions, wikipedia
 [says](https://en.wikipedia.org/wiki/Adjoint_functors) "adjunction is ubiquitous
