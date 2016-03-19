@@ -406,14 +406,14 @@ interpretation regarding points).
 
 As for the morphism-part, we need to describe how to functorially associate a
 $\mathrm{Loc}$-morphism $\mu:L\rightarrow M$ with a continuous function
-$f\_\mu:\mathrm{Sp}(L)\rightarrow\mathrm{Sp}(M)$. Since we model points in
-$\mathrm{Sp}(L)$ and $\mathrm{Sp}(M)$ as $\mathrm{Frm}$-morphisms, $f\_\mu$ will
+$f_\mu:\mathrm{Sp}(L)\rightarrow\mathrm{Sp}(M)$. Since we model points in
+$\mathrm{Sp}(L)$ and $\mathrm{Sp}(M)$ as $\mathrm{Frm}$-morphisms, $f_\mu$ will
 map points by composing them with the $\mathrm{Frm}$-morphism
-$\mu^\mathrm{op}:M\rightarrow L$, so $f\_\mu(x):=x\circ\mu^\mathrm{op}$. This
+$\mu^\mathrm{op}:M\rightarrow L$, so $f_\mu(x):=x\circ\mu^\mathrm{op}$. This
 definition "compiles": any $x\in\mathrm{Sp}(L)$ is a $\mathrm{Frm}$-morphism
 $L\rightarrow\\{0,1\\}$, so $x\circ\mu^\mathrm{op}$ is a $\mathrm{Frm}$-morphism
 $M\rightarrow\\{0,1\\}$, which means
-$f\_\mu(x)=x\circ\mu^\mathrm{op}\in\mathrm{Sp}(M)$.
+$f_\mu(x)=x\circ\mu^\mathrm{op}\in\mathrm{Sp}(M)$.
 
 
 #### Recipe 2: Points as Completely Prime Filters
@@ -433,7 +433,7 @@ Thinking again of a "point" as a collection of locations, filters become an
 obvious candidates to model points. The restriction to completely-prime filters
 meant to mitigate the issue (mentioned above) regarding arbitrary-joins and can
 be understood as allowing only neighbourhood systems as admissible filters
-(indeed, in topological spaces any collection $\mathscr{U}\_x:=\\{U\in\Omega X |
+(indeed, in topological spaces any collection $\mathscr{U}_x:=\\{U\in\Omega X |
 x\in U\\}$ is a completely-prime filter).
 
 This construction is equivalent to the first one: Any completely-prime filter
@@ -444,11 +444,11 @@ $\mathscr{F}:=\\{x\in L | \mu(x)=1\\}$.
 
 The object part of $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ is
 constructed by associating each $\ell\in L$ with an open set
-$\Sigma\_\ell:=\\{\mathscr{F}\subset L | \ell\in\mathscr{F}\\}$ where $\mathscr{F}$
+$\Sigma_\ell:=\\{\mathscr{F}\subset L | \ell\in\mathscr{F}\\}$ where $\mathscr{F}$
 is completely prime. This is a topology, since $\Sigma_0=\emptyset$,
 $\Sigma_1=\\{\mathscr{F} | \mathscr{F}\subset L\\}$ (completely prime filters),
-$\Sigma\_{a\land b}=\Sigma_a\cap\Sigma_b$ and
-$\Sigma\_{\bigvee{a_i}}=\bigcup\Sigma\_{a_i}$.
+$\Sigma_{a\land b}=\Sigma_a\cap\Sigma_b$ and
+$\Sigma_{\bigvee{a_i}}=\bigcup\Sigma_{a_i}$.
 
 The morphism-part is constructed as following: let $\psi:L\rightarrow M$ be a
 locale-morphism, and define
@@ -458,7 +458,7 @@ adjoint of $\psi$ (and since $\psi^\*$ is a $\mathrm{Frm}$-morphism and
 $\mathscr{F}$ is completely prime over $L$, then $(\psi^\*)^{-1}(\mathscr{F})$ is
 completely prime over $M$ - so $\mathrm{Sp}(\psi)$ maps points to points). The
 map $\mathrm{Sp}(\psi)$ is continuous, since
-$(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\Sigma\_{\psi^\*(a)}$, thus $(\mathrm{Sp}(\psi))^{-1}(\Sigma\_a)=\\{\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^\*)^{-1}(\mathscr{F})\in\Sigma\_a\\}=\\{\mathscr{F}|a\in(\psi^\*)^{-1}(\mathscr{F})\\}=\\{\mathscr{F}|\psi^\*(a)\in\mathscr{F}\\}=\Sigma\_{\psi^\*(a)}$.
+$(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)=\Sigma_{\psi^\*(a)}$, thus $(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)=\\{\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^\*)^{-1}(\mathscr{F})\in\Sigma_a\\}=\\{\mathscr{F}|a\in(\psi^\*)^{-1}(\mathscr{F})\\}=\\{\mathscr{F}|\psi^\*(a)\in\mathscr{F}\\}=\Sigma_{\psi^\*(a)}$.
 
 
 #### Recipe 3: Points as Principal Prime Ideals
@@ -472,11 +472,11 @@ filters (heuristically, a principal prime ideal is a minimal collection of
 The forth construction essentially follows from the third: an element $\ell\in
 L$ is meet-irreducible whenever the principle ideal $\downarrow\ell$ is also
 prime. Alternatively, it follows from the second construction: if $\mathscr{F}$
-is a completely-prime filter, then $\ell\_\mathscr{F}:=\bigvee\\{x\in L | x
+is a completely-prime filter, then $\ell_\mathscr{F}:=\bigvee\\{x\in L | x
 \not\in \mathscr{F}\\}$ is meet-irreducible, and if $\ell\in L$ is meet-
-irreducible, then $\mathscr{F}\_\ell:=\\{x\in L | x\not\le\ell\\}$ is a completely-
-prime filter. Moreover, $\ell\_{\mathscr{F}\_\ell}=\ell$ and
-$x\in\mathscr{F}\_{\ell\_\mathscr{F}}\Leftrightarrow x\in\mathscr{F}$.
+irreducible, then $\mathscr{F}_\ell:=\\{x\in L | x\not\le\ell\\}$ is a completely-
+prime filter. Moreover, $\ell_{\mathscr{F}_\ell}=\ell$ and
+$x\in\mathscr{F}_{\ell_\mathscr{F}}\Leftrightarrow x\in\mathscr{F}$.
 
 Now the functor $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ is very simple
 (but less "interpretable"). The object part is given by $\ell\in L\mapsto\\{p\in
@@ -501,8 +501,8 @@ $M$.
 Finally - the functors $\mathrm{Lc}:\mathrm{Top}\rightarrow\mathrm{Loc}$ and
 $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ are adjoint, $\mathrm{Lc}$ to
 the left and $\mathrm{Sp}$ to the right, with unit
-$\lambda:\mathrm{Id}\_\mathrm{Top}\rightarrow\mathrm{Sp}\circ\mathrm{Lc}$ and
-counit $\sigma:\mathrm{Lc}\circ\mathrm{Sp}\rightarrow\mathrm{Id}\_\mathrm{Loc}$.
+$\lambda:\mathrm{Id}_\mathrm{Top}\rightarrow\mathrm{Sp}\circ\mathrm{Lc}$ and
+counit $\sigma:\mathrm{Lc}\circ\mathrm{Sp}\rightarrow\mathrm{Id}_\mathrm{Loc}$.
 
 The natural transformation corresponds to the counit $\sigma$ is:
 
@@ -515,18 +515,18 @@ L @>f>> M
 \end{CD}$$
 
 Where $L,M$ are locales, $f:L\rightarrow M$ is a locale-morphism,
-$f\_{|\\{\mathscr{F}\\}}$ is $f$ considered as a set-function restricted to
+$f_{|\\{\mathscr{F}\\}}$ is $f$ considered as a set-function restricted to
 completely prime filters over $L$, and
 $\phi_L:L\rightarrow(\mathrm{Lc}\circ\mathrm{Sp})(L)$ is a
-$\mathrm{Frm}$-morphism defined as $\ell\mapsto\Sigma\_\ell$ (so
-$\sigma_L:=(\phi_L)\_\*$ is its right Galois adjoint, hence a
+$\mathrm{Frm}$-morphism defined as $\ell\mapsto\Sigma_\ell$ (so
+$\sigma_L:=(\phi_L)_\*$ is its right Galois adjoint, hence a
 $\mathrm{Loc}$-morphism).
 
 Recall that $(f^\*)^{-1}:\mathrm{Sp}(L)\rightarrow\mathrm{Sp}(M)$, where $f^\*$ is
 the left Galois adjoint to $f$, maps continuously completely prime filters over
 $L$ to completely prime filters over $M$, so $((f^\*)^{-1})^{-1}=f^\*$ maps open-
 sets from $\Omega\mathrm{Sp}(M)$ to open sets from $\Omega\mathrm{Sp}(L)$, which
-makes a $\mathrm{Frm}$-morphism, thus $f\_{|\\{\mathscr{F}\\}}$ is a
+makes a $\mathrm{Frm}$-morphism, thus $f_{|\\{\mathscr{F}\\}}$ is a
 $\mathrm{Loc}$-morphism.
 
 The natural transformation corresponds to the unit $\lambda$ can be constructed

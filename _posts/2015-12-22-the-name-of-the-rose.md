@@ -145,7 +145,7 @@ perceptron's update rule", which is applicable as an online algorithm. The
 update rule is rather heuristic: if there's no error, keep the weights;
 otherwise, change the weight of each input in proportion to its magnitude, in
 the opposite direction of the error. If "fire" is represented by 1 and "hold" by
-0,  the rule is simply $w\_{i,t+1}\leftarrow w\_{i,t}+\delta(y\_t-\hat{y}\_t)x_i$. 
+0,  the rule is simply $w_{i,t+1}\leftarrow w_{i,t}+\delta(y_t-\hat{y}_t)x_i$. 
 
 **In [3]:**
 
@@ -274,8 +274,8 @@ engine at time $t$.
 
 Dealing with (potentially infinite) sequences of rewards leads to the idea of
 "discounted rewards" (with a discount factor $\gamma$). So the utility at time
-$t$ is $U(x_t,y_t)=E[\sum\gamma^{i-1}r\_{t+i}|(x_t,y_t)]$, and the engine
-maintains an estimation $\hat{U}\_t\approx U$, and iteratively updates it
+$t$ is $U(x_t,y_t)=E[\sum\gamma^{i-1}r_{t+i}|(x_t,y_t)]$, and the engine
+maintains an estimation $\hat{U}_t\approx U$, and iteratively updates it
 based on his observations.
 
 Discounting can be understood in several ways: it can be derived
@@ -287,20 +287,20 @@ risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
 present.
 
-For example, say that in time $t-1$ the engine observed $(x\_{t-1},y\_{t-1})$,
-rewarded $r\_{t-1}$ and served an ad based on the estimation
-$\hat{U}\_{t-1}(x\_{t-1},y\_{t-1})=u_0$. Then in time $t$ it observed $(x_t,y_t)$,
+For example, say that in time $t-1$ the engine observed $(x_{t-1},y_{t-1})$,
+rewarded $r_{t-1}$ and served an ad based on the estimation
+$\hat{U}_{t-1}(x_{t-1},y_{t-1})=u_0$. Then in time $t$ it observed $(x_t,y_t)$,
 and experienced an immediate reward $r_t$. So one option the engine may employ,
-is to update $\hat{U}\_{t}(x\_{t-1},y\_{t-1})=\alpha(r_t+\gamma\hat{U}\_{t-1}(x_t,y\_
-t)-\hat{U}\_{t-1}(x\_{t-1},y\_{t-1}))$ and $\hat{U}\_{t}(x,y)=\hat{U}\_{t-1}(x,y)$
+is to update $\hat{U}_{t}(x_{t-1},y_{t-1})=\alpha(r_t+\gamma\hat{U}_{t-1}(x_t,y_
+t)-\hat{U}_{t-1}(x_{t-1},y_{t-1}))$ and $\hat{U}_{t}(x,y)=\hat{U}_{t-1}(x,y)$
 for $(x,y)\neq (x_t,y_t)$ (where $\alpha$ is the learning rate).
 
 This is knowns as $\mathrm{TD}{(0)}$ rule, and it's a special case of the
 $\mathrm{TD}(\lambda)$ algorithm which I won't discuss here ("TD" stands for
-temporal differences). In this case, $\hat{U}\_t(x,y)=\omega_1x+\omega_2y$, so
+temporal differences). In this case, $\hat{U}_t(x,y)=\omega_1x+\omega_2y$, so
 the update rule should be applied to update the weights $(\omega_1,\omega_2)$.
 This can be naturally done by $\omega_1\leftarrow\omega_1+\alpha
-(r_t+\gamma\hat{U}\_{t-1}(x_t,y_t)-\hat{U}\_{t-1}(x\_{t-1},y\_{t-1})) x$ (and the
+(r_t+\gamma\hat{U}_{t-1}(x_t,y_t)-\hat{U}_{t-1}(x_{t-1},y_{t-1})) x$ (and the
 same applies for $\omega_2$).
 
 Here a simulation of the situation described above: 
