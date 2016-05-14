@@ -172,7 +172,6 @@ estimated_theta = scipy.optimize.minimize(err, x0=[0.25]*4+[0.5, 0.5],
 print 'Theta: '
 print '\t Actual:    ', THETA
 print '\t Estimated: ', estimated_theta[:4]
-print
 print 'Initial Value: '
 print '\t Actual:    ', XI
 print '\t Estimated: ', estimated_theta[4:6]
@@ -181,12 +180,11 @@ print '\t Estimated: ', estimated_theta[4:6]
 **Out [5]:**
 
     Theta: 
-    	 Actual:     [0.5, 0.5, 0.5, 0.5]
-    	 Estimated:  [ 0.50484547  0.50334676  0.49495745  0.49846957]
-    
+        Actual:     [0.5, 0.5, 0.5, 0.5]
+        Estimated:  [ 0.50484547  0.50334676  0.49495745  0.49846957]
     Initial Value: 
-    	 Actual:     [1.0, 0.1]
-    	 Estimated:  [ 0.98537009  0.10216832]
+        Actual:     [1.0, 0.1]
+        Estimated:  [ 0.98537009  0.10216832]
 
 
 ### 3. Smooth-and-Match
@@ -246,21 +244,19 @@ estimated_theta = scipy.optimize.minimize(err, x0=[0.1]*4, method='L-BFGS-B').x
 print 'Theta: '
 print '\t Actual:    ', THETA
 print '\t Estimated: ', estimated_theta[:4]
-print
 print 'Initial Value: '
 print '\t Actual:    ', XI
 print '\t Estimated: ', interpolated_x1[0], interpolated_x2[0]
 {% endhighlight %}
 
 **Out [9]:**
-    
+
     Theta: 
-    	 Actual:     [0.5, 0.5, 0.5, 0.5]
-    	 Estimated:  [ 0.49207082  0.49339354  0.4920194   0.49526578]
-    
+        Actual:     [0.5, 0.5, 0.5, 0.5]
+        Estimated:  [ 0.49207082  0.49339354  0.4920194   0.49526578]
     Initial Value: 
-    	 Actual:     [1.0, 0.1]
-    	 Estimated:  0.98565251968 0.117149797904
+        Actual:     [1.0, 0.1]
+        Estimated:  0.98565251968 0.117149797904
 
  
 ### 4. Accelerated Least Squares
@@ -365,7 +361,6 @@ print 'Theta: '
 print '\t Actual:          ', THETA
 print '\t Estimated (SME): ', SME_eta[:4]
 print '\t Estimated (ALS): ', ALS_eta[:4]
-print
 print 'Initial Value: '
 print '\t Actual:    ', XI
 print '\t Estimated (SME): ', SME_eta[4:6]
@@ -373,14 +368,13 @@ print '\t Estimated (ALS): ', ALS_eta[4:6]
 {% endhighlight %}
 
 **Out [10]:**
-    
+
     Theta: 
-    	 Actual:           [0.5, 0.5, 0.5, 0.5]
-    	 Estimated (SME):  [ 0.533042    0.51759576  0.48538656  0.48216213]
-    	 Estimated (ALS):  [ 0.51203431  0.50615854  0.48694281  0.49087575]
-    
+        Actual:           [0.5, 0.5, 0.5, 0.5]
+        Estimated (SME):  [ 0.533042    0.51759576  0.48538656  0.48216213]
+        Estimated (ALS):  [ 0.51203431  0.50615854  0.48694281  0.49087575]
     Initial Value: 
-    	 Actual:     [1.0, 0.1]
-    	 Estimated (SME):  [ 0.98565252  0.1171498 ]
-    	 Estimated (ALS):  [ 0.97651009  0.10682446]
+        Actual:     [1.0, 0.1]
+        Estimated (SME):  [ 0.98565252  0.1171498 ]
+        Estimated (ALS):  [ 0.97651009  0.10682446]
 

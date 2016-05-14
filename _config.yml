@@ -10,8 +10,13 @@ github_username:  omersha
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
+#highlighter: pygments
 math_engine: mathjax
 
 gems:
   - jekyll-sitemap
+
+collections:
+  laws-sausages-and-convnets:
+    output: true
