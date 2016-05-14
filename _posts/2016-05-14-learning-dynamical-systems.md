@@ -287,8 +287,7 @@ eta)}$$
 
 and the Hessian matrix is given by -
 
-$$\frac{\partial}{\partial\eta}\Psi(\eta)_{(k,l)}\propto\sum_t[(y(t)-x(t,\eta))\frac{\partial^2}{\partial\eta_k\eta_l}x(t,\eta)-\frac{\partial}{\partial\eta_k}x
-(t,\eta)\frac{\partial}{\partial\eta_l}x(t,\eta)]$$
+<center>$\frac{\partial}{\partial\eta}\Psi(\eta)_{(k,l)}\propto\sum_t[(y(t)-x(t,\eta))\frac{\partial^2}{\partial\eta_k\eta_l}x(t,\eta)-\frac{\partial}{\partial\eta_k}x(t,\eta)\frac{\partial}{\partial\eta_l}x(t,\eta)]$</center><br/>
 
 then in order to proceed, $a(t)=x(t,\hat{\eta}_0)$,
 $b_i(t)=\frac{\partial}{\partial\eta_i}x(t,\hat{\eta}_0)$ and
