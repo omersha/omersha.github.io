@@ -188,7 +188,7 @@ print '\t Estimated: ', estimated_theta[4:6]
     	 Actual:     [1.0, 0.1]
     	 Estimated:  [ 0.98537009  0.10216832]
 
- 
+
 ### 3. Smooth-and-Match
 Another borderline-obvious appraoch for solving the same problem, is utilizing
 smooth interpolation and numerical differentiation to learn $\hat{x_i}(t)$ and
@@ -253,7 +253,7 @@ print '\t Estimated: ', interpolated_x1[0], interpolated_x2[0]
 {% endhighlight %}
 
 **Out [9]:**
-
+    
     Theta: 
     	 Actual:     [0.5, 0.5, 0.5, 0.5]
     	 Estimated:  [ 0.49207082  0.49339354  0.4920194   0.49526578]
@@ -373,7 +373,7 @@ print '\t Estimated (ALS): ', ALS_eta[4:6]
 {% endhighlight %}
 
 **Out [10]:**
-
+    
     Theta: 
     	 Actual:           [0.5, 0.5, 0.5, 0.5]
     	 Estimated (SME):  [ 0.533042    0.51759576  0.48538656  0.48216213]
