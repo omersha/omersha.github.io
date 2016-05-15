@@ -16,7 +16,7 @@ agent-based, geometric, relational and so on. When the observables have
 temporal or spatial structure, differential equations are the default approach.
 
 For example (warning: extreme simplification ahead), consider wages $\omega(t)$
-and employment level $e(t)$. The Central Bureau of Statistics constantly
+and employment level $e(t)$. The central bureau of statistics constantly
 estimates both $\omega(t)$ and $e(t)$, and would like to predict for obvious
 reasons the employment level few months ahead. Knowing nothing about
 nothing, they might think of using some linear model for this predictive
@@ -28,11 +28,11 @@ times when the employment is nearly full, the bargaining power of the employees
 increases, and with it their wages. In turn, higher wages shrink the employers
 profit margins, and the incurring risk leads to less employment. So amusingly,
 as Goodwin has noted at the sixties, the economic system of wages and employment is
-very similar to a biological ecosystem of predators and preys. This can be modeled
+very similar to a biological ecosystem of predators and preys. Such systems can be modeled
 using the [Lotka–Volterra
 Equations](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations).
 
-Those are a system of non-linear and first-order
+Those are non-linear and first-order
 [ODEs](https://en.wikipedia.org/wiki/Ordinary_differential_equation), that
 model the dynamics of the prey population $e(t)$ and the predators population
 $\omega(t)$ by a family of differential equations, parameterized by
@@ -290,9 +290,9 @@ and the Hessian matrix is given by -
 <center>$\frac{\partial}{\partial\eta}\Psi(\eta)_{(k,l)}\propto\sum_t[(y(t)-x(t,\eta))\frac{\partial^2}{\partial\eta_k\eta_l}x(t,\eta)-\frac{\partial}{\partial\eta_k}x(t,\eta)\frac{\partial}{\partial\eta_l}x(t,\eta)]$</center><br/>
 
 <div>then in order to proceed, $a(t)=x(t,\hat{\eta}_0)$, $b_i(t)=\frac{\partial}{\partial\eta_i}x(t,\hat{\eta}_0)$ and $c_{i,j}(t)=\frac{\partial^2}{\partial\eta_i\partial\eta_j}x(t,\hat{\eta}_0)$ are required. Either way, note that this eventually gives $\frac{\partial}{\partial\eta}\Psi(\hat{\eta}_0)$, and not the inverse, so an
-additional step of some back-substitutions should be done. In the paper, it is suggested to compute them by integration.</div><br/>
+additional step of some back-substitutions should be done.</div><br/>
 
-The values of $a(t)$ are obtained by the initial-value problem the comes from
+In the paper, it is suggested to compute them by integration. The values of $a(t)$ are obtained by the initial-value problem the comes from
 the dynamic equation:
 
 $$\frac{\partial}{\partial t}a(t)=F(a(t),\hat{\eta}_0)$$
@@ -348,27 +348,27 @@ err = lotka_volterra_SME_error(interpolated_x1, interpolated_x2, interpolated_dx
 SME_theta = scipy.optimize.minimize(err, x0=[0.1]*4, method='CG').x
 SME_eta = np.hstack((SME_theta, train.values[0, :]))
 
-ALS_eta = scipy.optimize.minimize(lotka_volterra_LSE_objective(train),
-                                          x0=SME_eta, method='CG', options={'maxiter':10}).x
+ACCEL_eta = scipy.optimize.minimize(lotka_volterra_LSE_objective(train),
+                                    x0=SME_eta, method='CG', options={'maxiter':10}).x
 
 print 'Theta: '
-print '\t Actual:          ', THETA
-print '\t Estimated (SME): ', SME_eta[:4]
-print '\t Estimated (ALS): ', ALS_eta[:4]
+print '\t Actual:            ', THETA
+print '\t Estimated (SME):   ', SME_eta[:4]
+print '\t Estimated (ACCEL): ', ACCEL_eta[:4]
 print 'Initial Value: '
-print '\t Actual:    ', XI
-print '\t Estimated (SME): ', SME_eta[4:6]
-print '\t Estimated (ALS): ', ALS_eta[4:6]
+print '\t Actual:            ', XI
+print '\t Estimated (SME):   ', SME_eta[4:6]
+print '\t Estimated (ACCEL): ', ACCEL_eta[4:6]
 {% endhighlight %}
 
 **Out [10]:**
 <pre>
 Theta: 
-   Actual:           [0.5, 0.5, 0.5, 0.5a]
-   Estimated (SME):  [ 0.533042    0.51759576  0.48538656  0.48216213]
-   Estimated (ALS):  [ 0.51203431  0.50615854  0.48694281  0.49087575]
+   Actual:             [0.5, 0.5, 0.5, 0.5a]
+   Estimated (SME):    [ 0.533042    0.51759576  0.48538656  0.48216213]
+   Estimated (ACCEL):  [ 0.51203431  0.50615854  0.48694281  0.49087575]
 Initial Value: 
-   Actual:     [1.0, 0.1]
-   Estimated (SME):  [ 0.98565252  0.1171498 ]
-   Estimated (ALS):  [ 0.97651009  0.10682446]
+   Actual:             [1.0, 0.1]
+   Estimated (SME):    [ 0.98565252  0.1171498 ]
+   Estimated (ACCEL):  [ 0.97651009  0.10682446]
 </pre>
