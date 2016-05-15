@@ -25,7 +25,7 @@ e(t)$), which is likely to work very poorly.
 
 Alternatively, they might try to model the situation a bit more accurately. At
 times when the employment is nearly full, the bargaining power of the employees
-increases, and with it their wages. In turn, higher wages shrinks the employers
+increases, and with it their wages. In turn, higher wages shrink the employers
 profit margins, and the incurring risk leads to less employment. So amusingly,
 as Goodwin has noted at the sixties, the economic system of wages and employment is
 very similar to a biological ecosystem of predators and preys. This can be modeled
@@ -33,8 +33,8 @@ using the [Lotka–Volterra
 Equations](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations).
 
 Those are a system of non-linear and first-order
-[ODEs](https://en.wikipedia.org/wiki/Ordinary_differential_equation), and it
-models the dynamics of the prey population $e(t)$ and the predators population
+[ODEs](https://en.wikipedia.org/wiki/Ordinary_differential_equation), that
+model the dynamics of the prey population $e(t)$ and the predators population
 $\omega(t)$ by a family of differential equations, parameterized by
 $\Theta=(\theta_1,\theta_2,\theta_3,\theta_4)$:
 
