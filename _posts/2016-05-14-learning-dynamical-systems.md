@@ -292,7 +292,7 @@ and the Hessian matrix is given by -
 <div>then in order to proceed, $a(t)=x(t,\hat{\eta}_0)$, $b_i(t)=\frac{\partial}{\partial\eta_i}x(t,\hat{\eta}_0)$ and $c_{i,j}(t)=\frac{\partial^2}{\partial\eta_i\partial\eta_j}x(t,\hat{\eta}_0)$ are required. Either way, note that this eventually gives $\frac{\partial}{\partial\eta}\Psi(\hat{\eta}_0)$, and not the inverse, so an
 additional step of some back-substitutions should be done.</div><br/>
 
-In the paper, it is suggested to compute them by integration. The values of $a(t)$ are obtained by the initial-value problem the comes from
+In the paper, it is suggested to compute them by integration. The values of $a(t)$ are obtained by the initial-value problem that comes from
 the dynamic equation:
 
 $$\frac{\partial}{\partial t}a(t)=F(a(t),\hat{\eta}_0)$$
