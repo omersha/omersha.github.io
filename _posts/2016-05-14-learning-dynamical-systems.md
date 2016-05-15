@@ -112,7 +112,7 @@ plt.legend(handles=[target, linear, simulated])
 So this leads to the central question of this post: how can the parameters
 $\Theta$ be estimated?
 
-This is an interesting topic, requires balancing trade-offs of
+This is an interesting topic, requires balancing trade-offs regarding
 statistical considerations, numerical accuracy and computational efficiency.
 The following is based on a paper by [Dattner and Gugushvili](http://arxiv.org/abs/1503.07973),
 and will deal with the general case. The Lotka-Volterra equations
