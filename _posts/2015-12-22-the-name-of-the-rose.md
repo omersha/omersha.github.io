@@ -15,7 +15,7 @@ term I used, it became clear that this person was already familiar with the conc
 under a different name. But what initially looked like nothing more than a
 confusing lingo, turned out to be of fundamental significance.
 
-### An engineer, a statistician and a algorithmician walk into a bar... 
+### An engineer, a statistician and an algorithmician walk into a bar... 
  
 #### Noise Cancellation
 An electrical engineer is facing the task of building an active noise-canceller
