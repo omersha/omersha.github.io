@@ -2,7 +2,7 @@
 layout: post
 title: "The Generative-Discriminative Fallacy"
 preview: Machine learning algorithms are often categorized as either discriminative or generative. While this dichotomy can be instructive, it is often misleading.
---- 
+---
 
 ### 1. The Generative-Discriminative Dichotomy
 <div><p>
