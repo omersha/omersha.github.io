@@ -549,8 +549,8 @@ definitions:
 <li> A <b>filter</b> $\mathscr{F}$ on a lattice $L$ is a non-empty subset of $L$ such that
 $\mathscr{F}=\uparrow G$ for some $G\subseteq L$ and
 $x,y\in\mathscr{F}\Rightarrow x\land y\in\mathscr{F}$.</li>
-<li> A filter $\mathscr{F}$ on a lattice $L$ is <b>Prime</b> iff $a_1\lor</li>
-a_2\in\mathscr{F}$ implies that $a_1\in\mathscr{F}$ or $a_2\in\mathscr{F}$.
+<li> A filter $\mathscr{F}$ on a lattice $L$ is <b>Prime</b> iff $a_1\lor
+a_2\in\mathscr{F}$ implies that $a_1\in\mathscr{F}$ or $a_2\in\mathscr{F}$.</li>
 <li> A filter $\mathscr{F}$ on a lattice $L$ is <b>Completely Prime</b> iff the above
 holds for arbitrary joins: $\bigvee{a_i\in\mathscr{F}}\Rightarrow\exists a_i$
 s.t. $a_i\in\mathscr{F}$.</li>
@@ -593,7 +593,9 @@ adjoint of $\psi$ (and since $\psi^*$ is a $\mathrm{Frm}$-morphism and
 $\mathscr{F}$ is completely prime over $L$, then $(\psi^*)^{-1}(\mathscr{F})$ is
 completely prime over $M$ - so $\mathrm{Sp}(\psi)$ maps points to points). The
 map $\mathrm{Sp}(\psi)$ is continuous, since
-$(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)=\Sigma_{\psi^*(a)}$, thus $(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)={\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^*)^{-1}(\mathscr{F})\in\Sigma_a}={\mathscr{F}|a\in(\psi^*)^{-1}(\mathscr{F})}={\mathscr{F}|\psi^*(a)\in\mathscr{F}}=\Sigma_{\psi^*(a)}$.
+$(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)=\Sigma_{\psi^*(a)}$, thus -
+
+$$(\mathrm{Sp}(\psi))^{-1}(\Sigma_a)={\mathscr{F} | \mathrm{Sp}(\psi)(\mathscr{F})=(\psi^*)^{-1}(\mathscr{F})\in\Sigma_a}={\mathscr{F}|a\in(\psi^*)^{-1}(\mathscr{F})}={\mathscr{F}|\psi^*(a)\in\mathscr{F}}=\Sigma_{\psi^*(a)}$$
 </p></div>
 
 
