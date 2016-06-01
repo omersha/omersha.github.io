@@ -228,7 +228,7 @@ two vectors of length $M$:
 # Direct, serial and inefficient linear convolution (using dot products):
 def convolve(a, b): 
     longer = [a, b][np.argmax((len(a), len(b)))]
-    shorter = [a, b][np.argmin((len(a), len(b)))]
+    shorter = [b, a][np.argmin((len(b), len(a)))]
     K = len(longer)-len(shorter)+1
     convolution = np.zeros(K, longer.dtype)
     for i in xrange(K):
