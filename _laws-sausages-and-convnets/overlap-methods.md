@@ -265,8 +265,7 @@ inline void cache_spatial_circular_tile(__global float const * const inputs,
       unsigned int local_index = 2*local_idx;
       unsigned int global_index = tile_start + local_index;
       tile[local_index] = inputs[global_index]; // (global_index<N)?...:0.0f;
-      tile[local_index+1] = inputs[global_index+1]; //
-(global_index+1<N)?...:0.0f;
+      tile[local_index+1] = inputs[global_index+1]; // (global_index+1<N)?...:0.0f;
    } else {
       unsigned int local_index = M+local_idx-1;
       unsigned int global_index = tile_start + local_index;
