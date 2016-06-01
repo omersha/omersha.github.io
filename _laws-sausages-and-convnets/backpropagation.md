@@ -39,12 +39,12 @@ the best optimization strategies make use of the gradient $\frac{d(E\circ
 M)}{dW}$. Of course, non-smooth functions play a very important role in machine
 learning - but at least in principle, all of this works just as well with
 Lipschitz continuity and proximal-subgradients. By the chain rule, we can
-succinctly write: $\frac{dE}{dW}=\frac{dE}{dO}\frac{dO}{dW}$.
+succinctly write: $\frac{dE}{dW}=\frac{dE}{dO}\otimes\frac{dO}{dW}$.
 </p></div>
 
 <div><p>
 Now, if $M$ itself is a composition $M:=M_\text{outer}\circ M_\text{inner}$,
-then $\frac{dE}{dW_\text{inner}}=\frac{dE}{dO_\text{inner}}\frac{dO_\text{inner}
+then $\frac{dE}{dW_\text{inner}}=\frac{dE}{dO_\text{inner}}\otimes\frac{dO_\text{inner}
 }{dW_\text{inner}}$. But $O_\text{inner}=I_\text{outer}$, so the only contextual
 information $M_\text{inner}$ needs is $\frac{dE}{dI_\text{outer}}$. In its core,
 backpropagation is simply the recursive application of this idea. From a
