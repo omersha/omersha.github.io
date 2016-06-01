@@ -207,15 +207,17 @@ regularization of the learning.
 <div><p>
 For simplicity, let's restrict the discussion to one-dimensional sequences for
 the meanwhile. In the comfortable la-la land of infinite sequences, the
-convolution $a\ast b$ of two sequences $a,b\in C^\infty$ is defined as $(a\ast b
-)_n:=\sum_{k=-\infty}^{+\infty}a_kb_{n-k}=\sum_{k=-\infty}^{+\infty}a_{n-k}b_k$.
+convolution $a\ast b$ of two sequences $a,b\in C^\infty$ is defined as -
+$$(a\ast b
+)_n:=\sum_{k=-\infty}^{+\infty}a_kb_{n-k}=\sum_{k=-\infty}^{+\infty}a_{n-k}b_k$$
 If only one of the sequences is finite, say $b\in C^{2M+1}$, things are still
-pretty nice: $(a\ast b)_n:=\sum_{k=-M}^{+M}a_{n-k}b_{M+k}$.
+pretty nice:
+$$(a\ast b)_n:=\sum_{k=-M}^{+M}a_{n-k}b_{M+k}$$
 </p></div>
 
 <div><p>
 When dealing with two finite sequences $a\in C^N$ and $b\in C^{2M+1}$ (assuming
-w.l.g. that $N\gt 2M$)- which are the kind of sequences usually encountered in
+w.l.g. that $N\gt 2M$) - which are the kind of sequences usually encountered in
 practice - then $a\ast b\in C^{N-2M}$, and $(a\ast b)_n$ is an inner-product of
 two vectors of length $M$: 
 </p></div>
@@ -257,8 +259,8 @@ Usually some padding is involved.
 </p></div>
 
 <div><p>
-One such common and useful strategy, is to define $a_i=a_0$ for $-M \le i\le 0$
-and $a_i=a_{N-1}$ for $N \ge i\ge N+M$. Another, even more common and useful, is
+One useful strategy, is to define $a_i=a_0$ for $-M \le i\le 0$
+and $a_i=a_{N-1}$ for $N \ge i\ge N+M$. Another, more common, is
 to define $a_i=0$ for $-M \le i\le 0$ or $N \ge i\ge N+M$.
 </p></div>
 
@@ -359,8 +361,9 @@ given by <code>numpy.correlate</code>.
 <div><p>
 The generalization of all of the above for the multidimensional setting is
 straightforward. For example, if $a\in C^N\times C^N$ and $b\in C^{2M+1}\times
-C^{2M+1}$, then their 2-dimensional convolution is $(a\ast b)_{(n,m)}:=\sum_{k_1
-=-M}^{+M}\sum_{k_2=-M}^{+M}a_{(n-k_1,m-k_2)}b_{(M+k_1,M+k_2)}$. Most of the
+C^{2M+1}$, then their 2-dimensional convolution is -
+$$(a\ast b)_{(n,m)}:=\sum_{k_1=-M}^{+M}\sum_{k_2=-M}^{+M}a_{(n-k_1,m-k_2)}b_{(M+k_1,M+k_2)}$$
+Most of the
 time, the one-dimensional algorithms and results are directly generalizable to
 higher-dimensions. So for the sake of notational sanity, most of the following
 will focus on one-dimensional sequence, and a separate section will be dedicated
@@ -703,14 +706,12 @@ to finite sequences, the party is quickly pooped.
 <div><p>
 To see why, consider the effect of time reversal on the DFT: substituting
 $r=N-1-n$ in the definition $\mathcal{F}(a)_k=\sum_{n=0}^{N-1}a_ne^{-\frac{i2\pi
-kn}{N}}$ leads to $\mathcal{F}(a)_k=\sum_{r=0}^{N-1}a_re^{-\frac{i2\pi
-k(N-1-r)}{N}}=e^{-\frac{i2\pi k(N-1)}{N}}\sum_{r=0}^{N-1}a_re^{\frac{i2\pi
-kr}{N}}=e^{\frac{i2\pi k}{N}}\sum_{r=0}^{N-1}a_re^{\frac{i2\pi kr}{N}}$, and
-taking the conjugate both inside and outside the summation
+kn}{N}}$ leads to -
+$$\mathcal{F}(a)_k=\sum_{r=0}^{N-1}a_re^{-\frac{i2\pi k(N-1-r)}{N}}=e^{-\frac{i2\pi k(N-1)}{N}}\sum_{r=0}^{N-1}a_re^{\frac{i2\pi kr}{N}}=e^{\frac{i2\pi k}{N}}\sum_{r=0}^{N-1}a_re^{\frac{i2\pi kr}{N}}$$
+and taking the conjugate both inside and outside the summation
 ($z_1+z_2=(z_1^\ast+z_2^\ast)^\ast$) results with the gloomy conclusion that if
-$\overline{a}$ is the time-reversed version of $a$, then
-$\mathcal{F}(\overline{a})_k=e^{\frac{i2\pi k}{N}}(\sum_{r=0}^{N-1}a_r^\ast
-e^{\frac{-i2\pi kr}{N}})^\ast=e^{\frac{i2\pi k}{N}}\mathcal{F}(a^\ast)^\ast_k$: 
+$\overline{a}$ is the time-reversed version of $a$, then -
+$$\mathcal{F}(\overline{a})_k=e^{\frac{i2\pi k}{N}}(\sum_{r=0}^{N-1}a_r^\ast e^{\frac{-i2\pi kr}{N}})^\ast=e^{\frac{i2\pi k}{N}}\mathcal{F}(a^\ast)^\ast_k$$
 </p></div>
 
 **In [16]:**
@@ -723,12 +724,11 @@ print np.allclose(np.fft.fft(a[::-1]), np.conj(np.fft.fft(np.conj(a)))*np.exp(2.
  
 <div><p>
 According to the Shift theorem, a circular temporal shift is the same a linear
-phase change, $\mathcal{F}(\{a_{(n-m)\text{mod}N}\})_k=\mathcal{F}(a)_k\cdot
-e^{\frac{-2i\pi km}{N}}$. Applied to the result above, it gives
-$\mathcal{F}(\{a_{(n-N+1)\text{mod}N}\})_k=\mathcal{F}(a)_k\cdot e^{\frac{-2i\pi
-k(N-1)}{N}}=\mathcal{F}(a)_k\cdot e^{-2i\pi k}e^{\frac{2i\pi
-k}{N}}=\mathcal{F}(a)_k\cdot e^{\frac{2i\pi k}{N}}$. So the finite cross-
-correlational analogue to the convolution theorem is still almost $(a\star
+phase change:
+$$\mathcal{F}(\{a_{(n-m)\text{mod}N}\})_k=\mathcal{F}(a)_k\cdot e^{\frac{-2i\pi km}{N}}$$
+Applied to the result above, it gives - 
+$$\mathcal{F}(\{a_{(n-N+1)\text{mod}N}\})_k=\mathcal{F}(a)_k\cdot e^{\frac{-2i\pi k(N-1)}{N}}=\mathcal{F}(a)_k\cdot e^{-2i\pi k}e^{\frac{2i\pi k}{N}}=\mathcal{F}(a)_k\cdot e^{\frac{2i\pi k}{N}}$$
+So the finite cross-correlational analogue to the convolution theorem is still almost $(a\star
 b)=\mathcal{F}^{-1}(\mathcal{F}(a)^\ast\cdot\mathcal{F}(b))$, only that the
 pointwise multiplication involves a shifted version of $\mathcal{F}(a)$ by an
 offset of $N-1$.
