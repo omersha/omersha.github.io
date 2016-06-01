@@ -2007,5 +2007,5 @@ assert(np.allclose(BastW, np.fft.ifft(np.fft.fft(b)*np.fft.fft(W))))
 {% endhighlight %}
 
 <div><p>
-This may seems restrictive, but since whole performing batch-training, weights of a convolutional layer are fixed for the while batch - this is actually the most common and natural setting in which convolutions are used within CNNs.
+This may seems restrictive, but since whole performing batch-training, weights of a convolutional layer are fixed for the whole batch - and this is actually the most common and natural setting in which convolutions are used within CNNs.
 </p></div>
