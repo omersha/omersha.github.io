@@ -458,10 +458,10 @@ print np.allclose(DFT_convolution(a,b), np.convolve(a, b, mode='full'))
 Theoretically, this can be generalized in several ways. A analogue of
 the convolution theorem for functions $G\mapsto C$, where $G$ is a
 <a href="https://en.wikipedia.org/wiki/Locally_compact_group">locally-compact group</a>
-(of which the scenario above, $Z$, is a special case) is given by
+(of which in the scenario above, $Z$, is a special case) is given by the
 <a href="https://en.wikipedia.org/wiki/Pontryagin_duality">Pontryagin duality</a>,
 and there are several generalizations for the functions' range, that
-<a href="http://mathworld.wolfram.com/NumberTheoreticTransform.html">for example</a> replaces $C$ with
+<a href="http://mathworld.wolfram.com/NumberTheoreticTransform.html">for example</a> replace $C$ with
 $Z/pZ$ or other rings (but the characterization of the algebraic structures
 that allow fast convolutions is an
 <a href="http://mathoverflow.net/questions/10237/does-the-convolution-theorem-apply-to-weaker-algebraic-structures">open question</a>).
