@@ -293,11 +293,11 @@ print '\t dEdW = %f' % check_dEdW
 {% endhighlight %}
 
 **Out [9]:**
-
+<pre>
     Gradient Checking:
     	 dEdI = 0.000026
     	 dEdW = 0.000010
-
+</pre>
  
 <div><p>
 And finally, let's try to use those gradients in a toy-optimization problem. If
@@ -321,10 +321,11 @@ print '\t After:  ', np.mean(np.square(forward(W_found, I)-target))
 {% endhighlight %}
 
 **Out [10]:**
-
+<pre>
     Weights MSEs:
     	 Before:  1231.53055406
     	 After:   1.60601207261
+</pre>
 
  
 <div><p>
@@ -417,9 +418,9 @@ print check_dEdW
 {% endhighlight %}
 
 **Out [13]:**
-
+<pre>
     3.69439780792e-06
-
+</pre>
  
 <div><p>
 So it seems correct, which is actually not happy news. Instead of 1

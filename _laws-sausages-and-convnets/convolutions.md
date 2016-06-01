@@ -787,10 +787,10 @@ print 'Result (shift):  ', np.round(np.real(shift)).astype(np.int64)
 {% endhighlight %}
 
 **Out [19]:**
-
+<pre>
     Expected:         [31626 35675 34911 30970 34250 27120 32454 38685 32808]
     Result (shift):   [31626 35675 34911 30970 34250 27120 32454 38685 32808]
-
+</pre>
  
 <div><p>
 Here's a summary-in-code for the discussion up to this point: 

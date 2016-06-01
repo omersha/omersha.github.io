@@ -565,14 +565,14 @@ print '\tDIT: ', np.allclose(recursive_DIF(b, 6), np.fft.fft(b))
 {% endhighlight %}
 
 **Out [9]:**
-
+<pre>
     Testing Radix-2:
     	DIT:  True
     	DIF:  True
     Testing Radix-6:
     	DIT:  True
     	DIT:  True
-
+</pre>
  
 <div><p>
 The two variations look very similar, but they differ in some significant
@@ -1052,10 +1052,10 @@ print 'Mixed:   ', mu((9, 2, 7, 1), (10, 9, 8, 7)), mu_inversed(mu((9, 2, 7, 1),
 {% endhighlight %}
 
 **Out [14]:**
-
+<pre>
     Decimal:  1729 [9, 2, 7, 1]
     Mixed:    1379 [9, 2, 7, 1]
-
+</pre>
  
 <div><p>
 Any permutation $\pi\in S_k$ induces an action $\mu_\pi$ over $Z^{|R|}$ by

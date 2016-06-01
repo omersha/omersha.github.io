@@ -159,11 +159,11 @@ print overlap_discard_slice(np.arange(15), 2, 5, 2)
 {% endhighlight %}
 
 **Out [2]:**
-
+<pre>
     [0 1 2 3 4 5 6 7 8]
     [ 5  6  7  8  9 10 11 12 13]
     [10 11 12 13 14]
-
+</pre>
  
 <div><p>
 Then, for each $I_k$ it computes a corresponding block $O_k$ of $I\ast W$ (where
@@ -479,11 +479,11 @@ steps_plan(10, 3)
 {% endhighlight %}
 
 **Out [7]:**
-
+<pre>
     Step 0: [0, 3, 6, 9]
     Step 1: [1, 4, 7]
     Step 2: [2, 5, 8]
-
+</pre>
  
 <div><p>
 The choice of$K$ is a micro-optimization, and mostly the choice $K=2$ will be
@@ -872,7 +872,7 @@ for division_index, left_indices in enumerate(offsets):
 {% endhighlight %}
 
 **Out [17]:**
-
+<pre>
     Division 0 Intervals:
     	 0	 :  [(0, 0)]
     	 18	 :  [(1, 1), (3, 0)]
@@ -892,7 +892,7 @@ for division_index, left_indices in enumerate(offsets):
     	 48	 :  [(0, 4), (2, 3), (4, 2)]
     	 66	 :  [(3, 4), (5, 3)]
     	 84	 :  []
-
+</pre>
  
 <div><p>
 And the now for the algorithm itself. The following is a Python prototype that
