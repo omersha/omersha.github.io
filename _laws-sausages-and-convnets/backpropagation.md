@@ -133,10 +133,10 @@ it, given by <code>scipy.optimize.check_grad</code>. It works roughly as followi
 def gradient_checking(func, x, index, epsilon=1e-6):
     x_curr = x.copy()
     x_curr[index] += epsilon
-    err1 = func(x)
+    err1 = func(x_curr)
     x_curr = x.copy()
     x_curr[index] -= epsilon
-    err2 = func(x)
+    err2 = func(x_curr)
     return (err2-err1)/(2*epsilon)
 {% endhighlight %}
  
