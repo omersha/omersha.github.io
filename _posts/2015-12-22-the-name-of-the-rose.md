@@ -3,37 +3,44 @@ layout: post
 title: "The Name of The Rose"
 preview: "Convergent evolution is a common phenomenon in machine learning: many dissimilar scenarios lead to similar algorithms. When it comes to generalizations, though, distinctive underlying ideas could be fundamental."
 --- 
+<div><p>
 Many ideas in machine learning came up independently in different contexts, and
 it's not uncommon to have multiple terms for the same concept. Those instances
 are usually dismissed as nuisance; after all, a rose by any other name, et
 cetera. Indeed, often this is just a matter of nomenclature, and with time
 conventions form, and some terms disappear while others acquire universal
 meaning. But sometimes the distinction is not as superficial as it may seem.
+</p></div>
 
+<div><p>
 Recently I encountered such a situation, in which while explaining someone a
 term I used, it became clear that this person was already familiar with the concept
 under a different name. But what initially looked like nothing more than a
 confusing lingo, turned out to be of fundamental significance.
+</p></div>
 
 ### An engineer, a statistician and an algorithmician walk into a bar... 
  
 #### Noise Cancellation
+<div><p>
 An electrical engineer is facing the task of building an active noise-canceller
 for cellular phones: a device that transmits the speaker's voice while omitting
 the environmental noise. This can be done using an additional directional
 microphone to record the environment, and a filter that subtracts it from the
 recordings of the main microphone used to record the speaker.
+</p></div>
 
+<div><p>
 Since the filter's transfer function should vary in time, in response to the
-unpredictable environmental noise, an [**adaptive
-filter**](https://en.wikipedia.org/wiki/Adaptive_filter) is required. The
-simplest such filter is the so-called ["least mean squares"
-(LMS)](https://en.wikipedia.org/wiki/Least_mean_squares_filter) filter. Here's
-its block diagram (taken from Wikipedia):
+unpredictable environmental noise, an <a href="https://en.wikipedia.org/wiki/Adaptive_filter"><b>adaptive
+filter</b></a> is required. The simplest such filter is the so-called <a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">"least mean squares" (LMS)</a> filter. Here's its block diagram (taken from Wikipedia):
+</p></div>
 
 <img src="{{ site.baseurl }}/assets/the-name-of-the-rose_files/lms.png" width="500"/> <br/><br/>
 
+<div><p>
 Naively implementing it in software is straightforward: 
+</p></div>
 
 **In [1]:**
 
@@ -52,15 +59,18 @@ def lms(initial_weights, X, y, step_size):
     return y_lms
 {% endhighlight %}
  
+<div><p>
 In the context of noise cancellation, the engineer applies it backwards, by
 using the noise signal $r_1(t)$ to remove the speech-signal $v(t)$ from the
 noisy speech-signal $v(t)+r_2(t)$ (note that $r_1(t)\approx r_2(t)$, but they
 are not equal since they were recorded using different microphones in different
 locations).
+</p></div>
 
+<div><p>
 As a demonstration, consider the canonical example of Arnold Schwarzenegger
-trying to make a phone call while [watching a bear riding a
-motorcycle](https://www.youtube.com/watch?v=zEBJXvda9Vk): 
+trying to make a phone call while <a href="https://www.youtube.com/watch?v=zEBJXvda9Vk">watching a bear riding a motorcycle</a>: 
+</p></div>
 
 <table>
 <tr> <td>Noisy:    </td><td><audio itemprop="audio" src="{{ site.baseurl }}/assets/the-name-of-the-rose_files/noisy.wav" controls="" preload=""></audio></td> </tr>
@@ -111,12 +121,15 @@ plt.plot(voice)
 
  
 #### Vehicle Routing
+<div><p>
 A statistician is hired by a retail company for the task of minimizing delivery
 times from their warehouse to their stores. There are multiple routes between
 the warehouse and any of the stores, and the traffic in those routes erratically
 changes during the day. For simplicity, let's focus on the case of 1 store with
 2 possible routes.
+</p></div>
 
+<div><p>
 There is some potentially useful information available, such as reports from
 navigation applications (e.g. Waze) and a-priori estimations of the current
 traffic based on the time (e.g. the notorious traffic jams of Wednesday
@@ -125,14 +138,16 @@ instability of the traffic patterns. For example, sometimes traffic jams tend to
 clear up quickly and current reports should carry little weight relative to the
 day and time,  and sometimes they're persistent and reports should be taken very
 seriously.
+</p></div>
 
+<div><p>
 This hints towards online learning: constantly updating the decision rule based
-on its recent performance. The
-[perceptron](https://en.wikipedia.org/wiki/Perceptron) is the simplest online
-**classification algorithm**. It is very roughly modeled after a biological
+on its recent performance. The <a href="https://en.wikipedia.org/wiki/Perceptron">perceptron</a> is the simplest online
+<b>classification algorithm</b>. It is very roughly modeled after a biological
 single neuron (the McCulloch–Pitts model). It may either "fire" or "hold", and
 the decision is based on whether its weighted accumulated input is crossing a
 threshold. Schematically:
+</p></div>
 
 <figure>
 <img src="{{ site.baseurl }}/assets/the-name-of-the-rose_files/perceptron.png" width="750"/>
@@ -140,12 +155,14 @@ threshold. Schematically:
 </figure>
 
 
+<div><p>
 The weights are learnt in a supervised manner using an algorithm known as "the
 perceptron's update rule", which is applicable as an online algorithm. The
 update rule is rather heuristic: if there's no error, keep the weights;
 otherwise, change the weight of each input in proportion to its magnitude, in
 the opposite direction of the error. If "fire" is represented by 1 and "hold" by
-0,  the rule is simply $w_{i,t+1}\leftarrow w_{i,t}+\delta(y_t-\hat{y}_t)x_i$. 
+0, the rule is simply $w_{i,t+1}\leftarrow w_{i,t}+\delta(y_t-\hat{y}_t)x_i$. 
+</p></div>
 
 **In [3]:**
 
@@ -162,11 +179,13 @@ def online_perceptron(initial_weights, X, y, learning_rate):
         y_perceptron[i], weights = online_perceptron_step(weights, X[i, :], y[i], learning_rate)
     return y_perceptron
 {% endhighlight %}
- 
+
+<div><p>
 Say the statistician has 4 sources of information: $R_1, R_2 \in[0,1]$ are the
 current reports regarding route A and route B respectively (0 means the route is
 clear and 1 means it's jammed), and $A_1, A_2\in[0,1]$ are the current
 (periodic) time-based estimations of the traffic in the routes: 
+</p></div>
 
 **In [4]:**
 
@@ -185,9 +204,11 @@ R1 = normalize(realA[10:] + numpy.random.normal(0.0, 0.5, 1000))
 R2 = normalize(realB[10:] + numpy.random.normal(0.0, 0.5, 1000))
 {% endhighlight %}
  
+<div><p>
 The decision is going to be based on the difference between the current traffic
 estimations based on real-time repotrs $R_1-R_2$, and the difference between the
 current traffic estimations based on the current time and date $A_1-A_2$: 
+</p></div>
 
 **In [5]:**
 
@@ -211,8 +232,10 @@ plt.tight_layout()
 ![png]({{ site.baseurl }}/assets/the-name-of-the-rose_files/the-name-of-the-rose_12_0.png) 
 
  
+<div><p>
 Due to the temporal dynamics, a stationary classifier is unlikely to work, and
 the classes aren't linearly separable: 
+</p></div>
 
 **In [6]:**
 
@@ -227,9 +250,10 @@ plot_decisions(classifier, numpy.vstack((R, A)).T, real_classes, h=0.2, title=No
  
 ![png]({{ site.baseurl }}/assets/the-name-of-the-rose_files/the-name-of-the-rose_14_0.png) 
 
- 
+<div><p>
 On the other hand, the online learning algorithm is adaptive to the temporal structure, and
-works rather well: 
+works rather well:
+</p></div>
 
 **In [7]:**
 
@@ -249,6 +273,7 @@ print "Accuracy: %.2f."%(numpy.sum(real_classes==classes_perceptron)/(len(classe
 
  
 #### Online Advertising
+<div><p>
 A consumer product company starts a new campaign over the internet, and it needs
 to decide how much it is worth paying for serving its new ad. The decision should
 take into account the potential viewer demographics (say, age and economic
@@ -256,37 +281,47 @@ status), and the evaluation must somehow mitigate the fact that the impact of
 the ads is indirect and delayed: it's impossible to relate a specific sale with
 a specific viewing of an ad. Moreover, the effectiveness of the ads is likely to
 vary over time.
+</p></div>
 
+<div><p>
 An algorithm designer is assigned with the task of writing the engine that
 interacts with the demand-side platform. The standard framework for constructing
 a policy that maximizes long-term utilities based on observed immediate rewards
-is [**Temporal Differences**](http://www.scholarpedia.org/article/Temporal_difference_learning).
+is <a href="http://www.scholarpedia.org/article/Temporal_difference_learning"><b>Temporal Differences</b></a>.
 In the current simplified setting, the policy
 should be based on a linear function of an "age signal" $x_t\in[0,1]$ (where 1
 means a viewer in his twenties, and 0 means the viewer is either much younger or
 much older), and a "economic status" signal $y_t\in[0,1]$ (where 1 means
 "spendthrift").
+</p></div>
 
+<div><p>
 At each time-step, the engine receives a reward $r_t$, which measures the
 flow of incomes from sales. Of course, the value of $r_t$ is the noisy result
 of previous exposure to ads, and has nothing to do with the decision made by the
 engine at time $t$.
+</p></div>
 
+<div><p>
 Dealing with (potentially infinite) sequences of rewards leads to the idea of
 "discounted rewards" (with a discount factor $\gamma$). So the utility at time
 $t$ is $U(x_t,y_t)=E[\sum\gamma^{i-1}r_{t+i}|(x_t,y_t)]$, and the engine
 maintains an estimation $\hat{U}_t\approx U$, and iteratively updates it
 based on his observations.
+</p></div>
 
+<div><p>
 Discounting can be understood in several ways: it can be derived
-axiomatically by specifying some reasonable properties of [temporal
-preferences](https://en.wikipedia.org/wiki/Time_preference) (c.f. Koopmans), or
+axiomatically by specifying some reasonable properties of <a href="https://en.wikipedia.org/wiki/Time_preference">temporal
+preferences</a> (c.f. Koopmans), or
 it can be seen as a way to incorporate infinite horizons with random stopping times, or finally,
 it can be justified economically by considering the usual stories about the
 risk that is associated with future incomes, or about the "hypothetical losses"
 of potential profits that could be obtained by investing the said income in the
 present.
+</p></div>
 
+<div><p>
 For example, say that in time $t-1$ the engine observed $(x_{t-1},y_{t-1})$,
 rewarded $r_{t-1}$ and served an ad based on the estimation
 $\hat{U}_{t-1}(x_{t-1},y_{t-1})=u_0$. Then in time $t$ it observed $(x_t,y_t)$,
@@ -294,7 +329,9 @@ and experienced an immediate reward $r_t$. So one option the engine may employ,
 is to update $\hat{U}_{t}(x_{t-1},y_{t-1})=\alpha(r_t+\gamma\hat{U}_{t-1}(x_t,y_
 t)-\hat{U}_{t-1}(x_{t-1},y_{t-1}))$ and $\hat{U}_{t}(x,y)=\hat{U}_{t-1}(x,y)$
 for $(x,y)\neq (x_t,y_t)$ (where $\alpha$ is the learning rate).
+</p></div>
 
+<div><p>
 This is knowns as $\mathrm{TD}{(0)}$ rule, and it's a special case of the
 $\mathrm{TD}(\lambda)$ algorithm which I won't discuss here ("TD" stands for
 temporal differences). In this case, $\hat{U}_t(x,y)=\omega_1x+\omega_2y$, so
@@ -302,8 +339,11 @@ the update rule should be applied to update the weights $(\omega_1,\omega_2)$.
 This can be naturally done by $\omega_1\leftarrow\omega_1+\alpha
 (r_t+\gamma\hat{U}_{t-1}(x_t,y_t)-\hat{U}_{t-1}(x_{t-1},y_{t-1})) x$ (and the
 same applies for $\omega_2$).
+</p></div>
 
+<div><p>
 Here a simulation of the situation described above: 
+</p></div>
 
 **In [8]:**
 
@@ -324,10 +364,12 @@ def execute_engine(count):
 states, rewards = execute_engine(20000)
 {% endhighlight %}
  
+<div><p>
 Since the profits from an ad are both delayed and stochastic, at any given time
 there will be no relation between the current user, and the current reward -
 which makes it hard (impossible?) to learn a good decision rule by using
 supervised learning algorithms: 
+</p></div>
 
 **In [9]:**
 
@@ -354,9 +396,10 @@ plt.show()
  
 ![png]({{ site.baseurl }}/assets/the-name-of-the-rose_files/the-name-of-the-rose_20_1.png) 
 
- 
+<div><p>
 On the other hand, the temporal differences algorithm recovers the true utility
 associated with the users: 
+</p></div>
 
 **In [10]:**
 
@@ -388,22 +431,29 @@ plt.show()
 
  
 ### Tomato, Tomahto?
+<div><p>
 The above are three completely different formulations, motivated by completely
 different scenarios. But at the end, the essentially same algorithm was derived:
 it's the same iterative scheme, with almost identical update rules. A clear case
 of convergent evolution.
+</p></div>
 
+<div><p>
 The obvious suggestion is: let's just call that algorithm ILT ("Iterative Linear
 Thingie") and forget all those obscure terms we introduced ("lms", "perceptron",
 "temporal differences"...).
+</p></div>
 
+<div><p>
 Should we? The answer depends on the price. Adopting the ILT suggestion will
 obscure the different perspectives that led to the resulting algorithms, and the
 price is losing those nuances. This could be perfectly reasonable had those
 perspectives ran their course, but this is hardly the case: generalizations of
 this ILT algorithm are utterly unalike when guided by each of those different
 points of view.
+</p></div>
 
+<div><p>
 For example, the LMS filter may be generalized to other adaptive filters, such
 as the Kalman filter which is commonly used in varied situations, from
 trajectory optimization to econometric smoothing. The perceptron may be
@@ -412,23 +462,28 @@ support vector machines and feedforward neural networks). And the temporal
 differences algorithm is a basis for many algorithms (e.g. Q-learning) in
 optimal control and autonomous agents, and it can be used to
 train computers to play backgammon or super-mario better than you can.
+</p></div>
 
+<div><p>
 None of those generalizations is obvious by considering the ILT alone. But all
 of them are quite natural as a development of the ideas that led to the ILT in
 the first place, from the 3 different starting points.
+</p></div>
 
+<div><p>
 It's worth pointing out that this phenomenon is not unusual, and definitely not
-limited to machine learning. For
-[example](http://www.math.ucla.edu/~tao/preprints/forms.pdf), in elementary
+limited to machine learning. For <a href="http://www.math.ucla.edu/~tao/preprints/forms.pdf">example</a>, in elementary
 calculus an "integral", an "area under the curve" and an "anti-derivative" are
 pretty much 3 names for the same concept, originated from 3 different
 perspectives (namely: analytic, geometric and algebraic). But generalizations of
 this "same concept" take completely different turn when developed from each of
 those perspective (respectively: differential forms, measures and differential
 equations). 
+</p></div>
  
 #### Literary Coda
-Regarding the title, wikipedia
-[says](https://en.wikipedia.org/wiki/The_Name_of_the_Rose#Title): "Eco has
+<div><p>
+Regarding the title, wikipedia <a href="https://en.wikipedia.org/wiki/The_Name_of_the_Rose#Title">says</a>: "Eco has
 stated that his intention was to find a 'totally neutral title'... [it] 'came to
 me virtually by chance'". 
+</p></div>
