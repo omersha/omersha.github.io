@@ -9,7 +9,7 @@ I assume the reader is already familiar with backpropagation, but still, let's
 start by taking a step backwards and think about backpropagation in the large.
 The key principle underlying backpropagation is that a derivation is the arrow-
 part of a covariant functor from pointed differentiable manifolds to linear
-spaces. A.k,a, the chain rule. In the introduction I wrote that "backpropagation
+spaces. A.k.a, the chain rule. In the introduction I wrote that "backpropagation
 is a modular reformulation of the chain rule". It's time to elaborate.
 </p></div>
 
