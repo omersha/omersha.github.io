@@ -137,7 +137,7 @@ def gradient_checking(func, x, index, epsilon=1e-6):
     x_curr = x.copy()
     x_curr[index] -= epsilon
     err2 = func(x_curr)
-    return (err2-err1)/(2*epsilon)
+    return (err1-err2)/(2*epsilon)
 {% endhighlight %}
  
 <div><p>
