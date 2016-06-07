@@ -613,17 +613,17 @@ filters (heuristically, a principal prime ideal is a minimal collection of
 The forth construction essentially follows from the third: an element $\ell\in
 L$ is meet-irreducible whenever the principle ideal $\downarrow\ell$ is also
 prime. Alternatively, it follows from the second construction: if $\mathscr{F}$
-is a completely-prime filter, then $\ell_\mathscr{F}:=\bigvee{x\in L | x
-\not\in \mathscr{F}}$ is meet-irreducible, and if $\ell\in L$ is meet-
-irreducible, then $\mathscr{F}_\ell:={x\in L | x\not\le\ell}$ is a completely-
+is a completely-prime filter, then $\ell_\mathscr{F}:=\{\bigvee{x\in L | x
+\not\in \mathscr{F}}\}$ is meet-irreducible, and if $\ell\in L$ is meet-
+irreducible, then $\mathscr{F}_\ell:=\{x\in L | x\not\le\ell\}$ is a completely-
 prime filter. Moreover, $\ell_{\mathscr{F}_\ell}=\ell$ and
 $x\in\mathscr{F}_{\ell_\mathscr{F}}\Leftrightarrow x\in\mathscr{F}$.
 </p></div>
 
 <div><p>
 Now the functor $\mathrm{Sp}:\mathrm{Loc}\rightarrow\mathrm{Top}$ is very simple
-(but less "interpretable"). The object part is given by $\ell\in L\mapsto{p\in
-L | \ell\not\le p}$ (so $L$ is mapped into a topology), and the morphism part
+(but less "interpretable"). The object part is given by $\ell\in L\mapsto\{p\in
+L | \ell\not\le p\}$ (so $L$ is mapped into a topology), and the morphism part
 is $(\psi:L\rightarrow M)\mapsto({p\in L | \ell\not\le p}\mapsto {\psi(p) |
 p\in L, \ell\not\le p})$ which is continuous.
 </p></div>
@@ -722,7 +722,7 @@ $Y$ are $T_D$ then the $f$ is a homeomorphism.
 <div><p>
 But apparently, $T_D$ spaces are not very useful (such are the rumors, anyway).
 A better characterization is that of <b>sobriety</b>: a space $X$ is said to be
-sober if there are no meet-irreducible open sets other then $X$ ("No
+sober if there are no meet-irreducible open sets other than $X$ ("No
 neighbourhood systems without a point"). It's also true that a space $X$ is
 sober if and only if the filters $U(x)$ are precisely the completely prime ones.
 </p></div>
