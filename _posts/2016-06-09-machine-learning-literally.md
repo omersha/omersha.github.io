@@ -2,8 +2,8 @@
 layout: post
 title: "Machine Learning. Literally."
 preview: Arguably, the most successful application of machine learning is largely unknown to most practitioners. Appropriately, it literally involves machines that learn.
---- 
- 
+---
+
 What's the most successful application of machine learning?
 
 Ten different experts would probably give ten different answers. Likely,
