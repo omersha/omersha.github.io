@@ -17,7 +17,7 @@ engineers away from their offices.
 
 <div><p>
 This post is about Stone Duality: a result that relates geometry and algebra
-using a mathematical framework affectionately known as "abstract nonsense", and
+using a mathematical framework known as "abstract nonsense", and
 gives rise to a perspective on topology which is self-admittedly pointless. This
 is undoubtedly an heroic attempt to achieve pureness and inapplicability. Alas,
 it turned out to be useful and practical as well. Many ideas about the design of
