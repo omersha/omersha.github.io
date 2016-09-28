@@ -65,8 +65,8 @@ algorithm.
 
 <div><p>
 Now, an access to an arbitrary (though stationary) source of randomness provides
-an access to random bits, which can be thought of as a (possibly biased) coin flips.
-How can we use it to simulate a fair coin? And how can we be sure the a given
+an access to random bits, which can be thought of as (possibly biased) coin flips.
+How can we use it to simulate a fair coin? And how can we be sure that a given
 coin is indeed fair?
 </p></div>
 
@@ -211,7 +211,7 @@ numbers) and the finiteness of $\vec{p}$.
 </p></div>
 
 <div><p>
-Note that this it's not necessarily a speedup, e.g. by considering 
+Note that this is not necessarily a speedup, e.g. by considering 
 $\vec{p}\in[0,1]^{1000}$ with $p_0=1$. Usually, though, the second algorithm is
 faster. And its speedup is (roughly) caused by the fact that the random number
 $x\in[0,1)$ provides $b$ random-bits at once, while the bounds for the entropy
@@ -260,7 +260,7 @@ initialization step must be re-executed often.
 
 <div><p>
 This idea, however, can be turned into a useful algorithm nonetheless, and it
-can also provide some further insights about the interaction between the
+can also provide some further insights regarding the interaction between the
 numerical precision used for the probabilities, the entropy $H_2(\vec{p})$ and
 number of categories $n$. The key is to observe that the length of the array
 described above depends on all of those 3 factors: The length must obviously be
@@ -281,7 +281,7 @@ $(0.125, 0.375, 0.05, 0.45)$. We lose nothing by doing that.
 </p></div>
 
 <div><p>
-Now, the counts can be decomposed according to the significance of that digits -
+Now, the counts can be decomposed according to the significance of the digits -
 $$(125, 375, 50, 450) = (100, 300, 0, 400) + (20, 70, 50, 50) + (5, 5, 0, 0)$$
 and each can be associated with a "relative-frequency array" as above.
 </p></div>
@@ -421,8 +421,8 @@ case $i=0$ was chosen, but not returned (this indeed happens in probability
 $\frac{1}{4}(1-\frac{1}{2})=0.125$). Similarly, we have to find an event that
 occurs with probability $0.45-0.25=0.2$ to return $3$, in order to achieve to
 appropriate probability for this category, and again we just happen to have one
-available in the case $i=3$ was chosen, but not returned (this indeed happens in
-probability $\frac{1}{4}(1-\frac{1}{5})=0.2$).
+available in the case $i=3$ was chosen, but not returned (this events has a
+probability of $\frac{1}{4}(1-\frac{1}{5})=0.2$).
 </p></div>
 
 <div><p>
@@ -447,7 +447,7 @@ What a lucky coincidence!
 Well, this is not a coincidence, <a href="http://unsongbook.com/">because nothing ever
 is</a>. We can always arrange things so it would work. This
 was shown by Walker, popularized by Knuth who offered an $O(n\ln n)$ algorithm
-that does this initialization (see TACOP, Volume 2, 3.4.1), and was improved by 
+that does this initialization (see TAOCP, Volume 2, 3.4.1), and was improved by 
 <a href="https://web.archive.org/web/20131029203736/http://web.eecs.utk.edu/~vose/Publications/random.pdf">Vose</a>
 to an $O(n)$ algorithm. So we get an initialization
 step that takes $O(n)$, and afterwards we can draw in $O(1)$. The space
@@ -456,7 +456,7 @@ requirements are $2n$.
 
 <div><p>
 Both the sampling algorithm itself and its initialization step (together known
-as the "Alias Method") works pretty much like in the example above. The sampling
+as the "Alias Method") work pretty much like in the example above. The sampling
 algorithm is:
 
 <ol>
@@ -562,11 +562,11 @@ requires acknowledgment).
 <div><p>
 Moreover, a slight modification of the algorithm, by appropriately choosing the
 factors it uses, leads an algorithm which is a bit more numerically stable and
-can handle unnormalized probability-vectors, which is very helpful in practice.
+can handle unnormalized probability-vectors, which could be very helpful in practice.
 </p></div>
 
 <div><p>
-The following code demonstrates the idea, but a production-suitable implementation
+The following code demonstrates the idea, but a production-ready implementation
 should take care of how to update the unnormalized distributions and maintain their
 normalization factors:
 </p></div>
