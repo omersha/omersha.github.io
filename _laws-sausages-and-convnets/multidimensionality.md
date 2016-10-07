@@ -22,7 +22,7 @@ focus on the 2-dimensional case.
 ## 5.1. Separability
 <div><p>
 As for algorithmic issues for multidimensional layers, let's start with
-<a href="https://en.wikipedia.org/wiki/Separable_filter"></b>separable filters</b></a>. Those
+<a href="https://en.wikipedia.org/wiki/Separable_filter"><b>separable filters</b></a>. Those
 involve multidimensional convolutions that can be done by performing
 1-dimensional convolutions separably on each dimension. On the 2-dimensional
 case, it's simply means that the template-matrix is of rank 1. Now, very much
