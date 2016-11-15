@@ -11,18 +11,19 @@ or minimum does not appear..."  -Leonhard Euler
 The above obligatory quote is surely consistent with my
 experience as an algorithms designer. Optimization problems are not merely
 "everywhere"; quite literally ALL problems are basically optimization
-problems. This should be enough to convince anyone that optimization is
-inherently difficult, but it is a very general argument. What, specifically,
-makes optimization hard?
+problems, possibly in disguise. This should be enough to convince anyone that optimization is
+inherently difficult.
 </p></div>
 
 <div><p>
-After all, given a differentiable function $f:X\rightarrow R$, Fermat's theorem
+But this is a very general argument. What, specifically,
+makes optimization hard? It's not obvious: after all,
+given a differentiable function $f:X\rightarrow R$, Fermat's theorem
 gives an effective necessary condition for optimality ($\nabla f(x_*)=0$), thus
 it naturally leads to an optimization strategy: numerically solve $\nabla f=0$
 by applying a root-finding algorithm to find all the critical points. Moreover,
 the theorem can be nicely generalized to non-differentiable functions (e.g. in
-terms of subgradients), and those generalization are also algorithmically
+terms of subgradients), and those generalizations are also algorithmically
 applicable.
 </p></div>
 
@@ -38,7 +39,7 @@ problem by reducing it to a harder one.
 
 <div><p>
 How come? Well, finding roots requires function inversion, as we're looking for
-the level-set $f^{-1}(0)$. For general multidimensional functions, there is very
+the level-set $f^{-1}(0)$. For general functions, there is very
 little regularity to exploit, and the best strategy available is essentially
 following the iterative rule "if the value at the current point is larger than
 0, try to find a nearby point with a lower value" (and similarly for values
@@ -49,9 +50,9 @@ at least as hard as optimization.
 <div><p>
 But things are not all bad. Root-finding is efficiently solvable for univariate
 functions, and this is the main theme of this post. While the first algorithms
-I'll introduce will employ root-finding for optimization via Fermat's theorem,
+to be introduced below will employ root-finding for optimization via Fermat's theorem,
 it shall quickly become clear that the ideas involved (i.e. bracketing) can be
-leveraged to design direct optimization algorithms that works for non-smooth
+leveraged to design direct optimization algorithms that work for non-smooth
 and non-convex objective functions (though the objectives can't, of
 course, behave arbitrarily badly, hence the "no evil" in the title).
 </p></div>
@@ -76,8 +77,7 @@ Well, unless I'll give up along the way.
 
 #### Contents:
 1. [The Bisection Method](#bisection)
-2. [Ridders' Method (and also the "false position method" and the "secant
-method")](#ridders)
+2. [Ridders' Method (also the false-position and the secant methods)](#ridders)
 3. [Optimization without Roots](#enoughroots)
 4. [The Golden Section Method](#goldensection)
 5. [van Wijngaarden-Dekker-Brent Algorithm](#brent)
@@ -88,7 +88,7 @@ method")](#ridders)
 <div><p>
 The general strategy for univariate root-finding is bracketing: maintaining an
 interval $(a,b)$ such that the signs of $f(a)$ and $f(b)$ differ. When
-$f:R\rightarrow R$ is continuous, such interval must contain a root. But this
+$f:R\rightarrow R$ is continuous, such an interval must contain a root. But this
 strategy is effective even if $f$ is merely piecewise continuous: then if it
 doesn't contain a root, it either contains a jump-discontinuity (which
 numerically is indistinguishable from a root), or the function is unbounded
@@ -133,7 +133,7 @@ $f(x)=x^4+4x^3+x^2-6x+1$ in the interval $(-1, -0.5)$.
 <div><p>
 Here, differenting $f$ is analytically easy (since it's a polynomial). But this
 is not generally true. So to keep the flavour of a realistic setting I'm using
-numerical differentiation (not too realistic though: I'm allowing myself using
+numerical differentiation (not too realistic though: I'm allowing myself to use
 first order divided differences). 
 </p></div>
 
@@ -161,7 +161,7 @@ Bisection Method: 37 Iterations.
 
 ### <a name="ridders"></a> 2. Ridders' Method
 <div><p>
-Usually we could do better than a simple binary search, by incorporate some
+Usually we could do better than a simple binary search, by incorporating some
 geometrical reasoning into our bracketing method. While this imposes some
 additional regularity requirements on the objective, it often pays off in terms
 of convergence rate.
@@ -175,7 +175,7 @@ interval. This is exactly what both the <strong>"false position method"</strong>
 <strong>"secant method"</strong> do. They diverge by how they treat the "approximated root":
 the secant method always use it to replace the oldest of the two endpoints,
 while the false position use it to replace the endpoint with the identical sign
-(unless its sign is 0, of course, which means we're done).
+(unless its sign is 0, of course, which means it's done).
 </p></div>
 
 <div><p>
@@ -259,13 +259,13 @@ Ridder's Method: 6 Iterations.
 So the general strategy seems to be working. But so far we conveniently ignored
 some major problems. For starters, the verb "to optimize" obfuscates the fact
 that in each case, we're interested in specifically minimization or specifically
-maximization. Yet, a stationary point $f'(x_*)=0$ could be either. The above
-algorithms can not distinguish minima from maxima.
+maximization. Yet, looking for a stationary point $f'(x_*)=0$ could lead to either.
+The above algorithms can not distinguish minima from maxima.
 </p></div>
 
 <div><p>
 Fixing it requires constantly querying for the values of $f$, not just $f'$. But
-function evaluations could very well be (and usually is) the most expensive step
+function evaluations could very well be (and usually are) the most expensive steps
 in the algorithm, so it is a costly fix. Moreover, it'd still leave us with
 another problem: multiple roots and very close roots.
 </p></div>
@@ -288,8 +288,8 @@ $f:R\rightarrow R$ directly, instead of for solving $f'=0$.
 <div><p>
 The major advantage is that those modifications also work very well for non-
 differentiable functions, but even more importantly, they don't require a
-computation of the gradient. This is good because even when the objective is differentiable, its
-gradient may not be easily available. So it's desirable to devise methods that
+computation of the derivative. This is good because generally, even when the objective
+is differentiable, its gradient may not be easily available. So it's desirable to devise methods that
 require nothing more than evaluations of the objective.
 </p></div>
 
@@ -381,7 +381,7 @@ In other words, it leads nowhere.
 Continuing with the idea of geometrical approximation, the next natural step is
 to go from linear functions to quadratic functions. This requires maintaining 3
 points, and not just 2 - which may seem a bit awkward in the context of root-
-finding, but is the default anyway when doing optimization.
+finding, but is the default anyway when using bracketing for optimization.
 </p></div>
 
 <div><p>
@@ -394,7 +394,7 @@ $T:=\frac{f(a)}{f(c)}$.
 </p></div>
 
 <div><p>
-The case of colinear points requires special treatment, since in this case, of
+The case of colinear points requires some special treatment, since in this case, of
 course, quadratic interpolation is infeasible. This is mitigated by the
 algorithm by turning to linear approximation, and performing a step using the
 secant method. As discussed above, the secant method converges fast when the
