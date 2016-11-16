@@ -64,7 +64,7 @@ will focus on differentiable cases. The restriction to univariate objectives is
 not as limiting as it may seem, since general multidimensional optimization can
 often be done by solving sequences of a univariate optimization problems. The
 multivariate setting will be the subject of the following few posts (starting
-with line-search algorithms), and then I'll write about constraint optimization
+with line-search algorithms), and then I'll write about constrained optimization
 algorithms, and so on in that fashion <a href="https://www.youtube.com/watch?v=9f0audGO36A&feature=youtu.be&t=549">until everyone is
 eaten</a>. I may touch some theoretic-ish issues along the way (e.g. convergence rate,
 regularity conditions and such) but the focus will always be on the algorithms.
