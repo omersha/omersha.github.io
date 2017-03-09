@@ -21,11 +21,6 @@ construct an algorithm for multivariate objectives. The second will generalize
 the only non-bracketing method encountered thus-far, namely, Newton's method.
 </p></div>
 
-<div><p>
-This post completes the introductory-part of this series, and its end marks the
-transition to a more structured and methodological presentation.
-</p></div>
-
 #### Contents
 <ul style="list-style-type: none;">
 <li><a href="#coordinatewise">1. Coordinatewise Optimization</a></li>
@@ -73,7 +68,7 @@ Here are 2 simple cases, a positive one and a negative one:
 candidate extremum (that's easy: $\nabla f(\hat{x})=(\frac{\partial
 f(\hat{x})}{\partial x_1},...,\frac{\partial f(\hat{x})}{\partial x_N})=0$).</li>
 <li>But if $f$ is not differentiable then coordinatewise optimization doesn't
-necessarily leads to a candidate extremum, even if it's convex:</li>
+necessarily lead to a candidate extremum, even if it's convex:</li>
 </ul>
 </p></div>
 
@@ -89,7 +84,7 @@ only $g$ is surely differentiable.
 </p></div>
 
 <div><p>
-Note that the term $h_i$ depends only on the $i$-th coordinate. Such functions are called "separable",
+Note that each term $h_i$ depends only on the $i$-th coordinate. Such functions are called "separable",
 and such objectives are actually quite common. For example, they can be used to formulate plenty machine-learning algorithms, where
 $g(x)$ is a differentiable loss-function composed with a parameterization of the
 hypothesis space, and the $h_i$ functions are regularization terms which are
@@ -102,7 +97,8 @@ href="https://en.wikipedia.org/wiki/compressed_sensing">compressed sensing</a>.
 
 <div><p>
 And for god is just and merciful, separable objectives can be optimized
-coordinatewise. Why? Since for any $x\in R^N$ we have -
+coordinatewise. Well, maybe it's not so much but about god, as it's about the
+fact that for any $x\in R^k$ we have -
 $$
 \begin{equation*}
 \begin{split}
@@ -237,7 +233,7 @@ can be grouped together.
 <div><p>
 Many times, this can be used to convert problems that are unsuitable for
 coordinatewise-optimization into problems that are solvable coordinatewise, and
-lead to a significant improvements. For example, it can make a nondifferentiable
+lead to significant improvements. For example, it can make a nondifferentiable
 convex objective into a separable one.
 </p></div>
 
@@ -246,7 +242,7 @@ Possibly the most notable example for such a scheme is the <a
 href="https://en.wikipedia.org/wiki/Sequential_minimal_optimization">SMO</a>
 algorithm which was one of the earliest efficient optimization methods for <a
 href="https://en.wikipedia.org/wiki/Support_vector_machine">SVMs</a>. It
-minimizes 2-coordinates at the time (though it works in a constraint-setting).
+minimizes 2-coordinates at the time (though it works in a constraint setting).
 Nowadays there are better algorithms for learning SVMs, but the state-of-the-art
 (to my knowledge) is still based on coordinatewise-optimization.
 </p></div>
@@ -280,7 +276,7 @@ An alternative approach would be to generalize a univariate method so it would
 work on "all coordinates at once". A hint as for how it can be done was already
 given in the <a href="http://www.trivialorwrong.com/2016/11/28/take-the-rough-
 with-the-smooth.html">previous post</a> where Newton's method for finding roots
-was introduced, and it was mentioned that it can used (at least theoretically)
+was introduced, and it was mentioned that it can be used (at least theoretically)
 for finding roots of multivariate functions.
 </p></div>
 
